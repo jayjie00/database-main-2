@@ -1,0 +1,14 @@
+<RCC>
+  <qresource prefix="/icons">
+    <file>icons/ovalArrow.png</file>
+    <file>icons/arrow-arrow-removebg-preview.png</file>
+    <file>icons/icon_cable.png</file>
+    <file>icons/icon_highlighter.png</file>
+    <file>icons/icon_microphone.png</file>
+    <file>icons/icon_printer.png</file>
+    <file>icons/icon_5dots.png</file>
+    <file>icons/rect-lightGreen.png</file>
+    <file>icons/Logo-shadow.png</file>
+    <file>icons/cdm_logo_transparent.png</file>
+  </qresource>
+</RCC>
