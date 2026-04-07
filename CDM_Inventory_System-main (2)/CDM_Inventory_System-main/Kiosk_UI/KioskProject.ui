@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>775</width>
+    <width>781</width>
     <height>575</height>
    </rect>
   </property>
@@ -27,10 +27,10 @@
      <string notr="true">background-color: rgb(254, 255, 250);</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="page1">
-     <widget class="QWidget" name="left" native="true">
+     <widget class="QWidget" name="leftGreen" native="true">
       <property name="geometry">
        <rect>
         <x>0</x>
@@ -52,41 +52,48 @@
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: transparent;</string>
+        <string notr="true">background-color: transparent;
+image: url(:/images/icons/cdm_logo_transparent.png);</string>
        </property>
        <property name="text">
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap resource="resources.qrc">:/icons/icons/cdm_logo_transparent.png</pixmap>
+        <pixmap>:/icons/cdm_logo_transparent.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
        </property>
       </widget>
-      <widget class="QLabel" name="iconGreen_1">
+      <widget class="QLabel" name="iconGreen">
        <property name="geometry">
         <rect>
          <x>180</x>
-         <y>340</y>
+         <y>330</y>
          <width>161</width>
-         <height>131</height>
+         <height>141</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-image: url(:/images/icons/rect-lightGreen.png) 0 0 0 0 stretch stretch;</string>
        </property>
        <property name="text">
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap resource="resources.qrc">:/icons/icons/rect-lightGreen.png</pixmap>
+        <pixmap>:/icons/rect-lightGreen.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
        </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
       </widget>
-      <zorder>iconGreen_1</zorder>
+      <zorder>iconGreen</zorder>
       <zorder>cdmLogo</zorder>
      </widget>
-     <widget class="QWidget" name="right" native="true">
+     <widget class="QWidget" name="rightLightGreen" native="true">
       <property name="geometry">
        <rect>
         <x>320</x>
@@ -98,7 +105,7 @@
       <property name="styleSheet">
        <string notr="true">background-color: rgb(254, 255, 250)</string>
       </property>
-      <widget class="QLabel" name="label_1">
+      <widget class="QLabel" name="touchTo">
        <property name="geometry">
         <rect>
          <x>90</x>
@@ -124,7 +131,7 @@ color: rgb(87, 117, 80);</string>
         <bool>false</bool>
        </property>
       </widget>
-      <widget class="QLabel" name="label_2">
+      <widget class="QLabel" name="start">
        <property name="geometry">
         <rect>
          <x>90</x>
@@ -152,7 +159,7 @@ color: rgb(19, 78, 26);</string>
         <bool>false</bool>
        </property>
       </widget>
-      <widget class="QLabel" name="icon_arrowArrow_2">
+      <widget class="QLabel" name="tripleArrowPage1">
        <property name="geometry">
         <rect>
          <x>330</x>
@@ -162,19 +169,20 @@ color: rgb(19, 78, 26);</string>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: transparent;</string>
+        <string notr="true">background-color: transparent;
+image: url(:/images/icons/arrow-arrow-removebg-preview.png);</string>
        </property>
        <property name="text">
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap resource="resources.qrc">:/icons/icons/arrow-arrow-removebg-preview.png</pixmap>
+        <pixmap>:/icons/arrow-arrow-removebg-preview.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
        </property>
       </widget>
-      <widget class="QWidget" name="widget_7" native="true">
+      <widget class="QWidget" name="colorBehindTexts" native="true">
        <property name="geometry">
         <rect>
          <x>0</x>
@@ -187,10 +195,33 @@ color: rgb(19, 78, 26);</string>
         <string notr="true">background-color: #D9DFCE</string>
        </property>
       </widget>
-      <zorder>widget_7</zorder>
-      <zorder>label_1</zorder>
-      <zorder>label_2</zorder>
-      <zorder>icon_arrowArrow_2</zorder>
+      <widget class="QPushButton" name="btnPage1">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>441</width>
+         <height>541</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Georgia</family>
+         <pointsize>20</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: transparent;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <zorder>colorBehindTexts</zorder>
+      <zorder>touchTo</zorder>
+      <zorder>start</zorder>
+      <zorder>tripleArrowPage1</zorder>
+      <zorder>btnPage1</zorder>
      </widget>
     </widget>
     <widget class="QWidget" name="page2">
@@ -205,7 +236,7 @@ color: rgb(19, 78, 26);</string>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
-        <widget class="QLabel" name="label_3">
+        <widget class="QLabel" name="requestCategories">
          <property name="font">
           <font>
            <family>Georgia</family>
@@ -239,7 +270,7 @@ color: rgb(19, 78, 26);</string>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(217, 223, 206);</string>
       </property>
-      <widget class="QLabel" name="equipLabel">
+      <widget class="QLabel" name="equipmentBorrowing">
        <property name="geometry">
         <rect>
          <x>0</x>
@@ -278,11 +309,14 @@ color: rgb(19, 78, 26);</string>
          <height>31</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">image: url(:/images/icons/icon_5dots.png);</string>
+       </property>
        <property name="text">
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap resource="resources.qrc">:/icons/icons/icon_5dots.png</pixmap>
+        <pixmap>:/icons/icon_5dots.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>false</bool>
@@ -304,7 +338,7 @@ color: rgb(19, 78, 26);</string>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(217, 223, 206);</string>
       </property>
-      <widget class="QLabel" name="soundLabel">
+      <widget class="QLabel" name="soundSystemSetup">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -343,11 +377,14 @@ color: rgb(19, 78, 26);</string>
          <height>31</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">image: url(:/images/icons/icon_5dots.png);</string>
+       </property>
        <property name="text">
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap resource="resources.qrc">:/icons/icons/icon_5dots.png</pixmap>
+        <pixmap>:/icons/icon_5dots.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>false</bool>
@@ -369,7 +406,7 @@ color: rgb(19, 78, 26);</string>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(217, 223, 206);</string>
       </property>
-      <widget class="QLabel" name="officeLabel">
+      <widget class="QLabel" name="officeSchoolSupplies">
        <property name="geometry">
         <rect>
          <x>0</x>
@@ -408,11 +445,14 @@ color: rgb(19, 78, 26);</string>
          <height>31</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">image: url(:/images/icons/icon_5dots.png);</string>
+       </property>
        <property name="text">
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap resource="resources.qrc">:/icons/icons/icon_5dots.png</pixmap>
+        <pixmap>:/icons/icon_5dots.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>false</bool>
@@ -434,7 +474,7 @@ color: rgb(19, 78, 26);</string>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(217, 223, 206);</string>
       </property>
-      <widget class="QLabel" name="massLabel">
+      <widget class="QLabel" name="massPrinting">
        <property name="geometry">
         <rect>
          <x>20</x>
@@ -473,11 +513,14 @@ color: rgb(19, 78, 26);</string>
          <height>31</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">image: url(:/images/icons/icon_5dots.png);</string>
+       </property>
        <property name="text">
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap resource="resources.qrc">:/icons/icons/icon_5dots.png</pixmap>
+        <pixmap>:/icons/icon_5dots.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>false</bool>
@@ -487,7 +530,7 @@ color: rgb(19, 78, 26);</string>
        </property>
       </widget>
      </widget>
-     <widget class="QLabel" name="icon_cable">
+     <widget class="QLabel" name="iconCable">
       <property name="geometry">
        <rect>
         <x>5</x>
@@ -497,13 +540,14 @@ color: rgb(19, 78, 26);</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: transparent;</string>
+       <string notr="true">background-color: transparent;
+image: url(:/images/icons/icon_cable.png);</string>
       </property>
       <property name="text">
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap resource="resources.qrc">:/icons/icons/icon_cable.png</pixmap>
+       <pixmap>:/icons/icon_cable.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -512,7 +556,7 @@ color: rgb(19, 78, 26);</string>
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLabel" name="icon_microphone">
+     <widget class="QLabel" name="iconMicrophone">
       <property name="geometry">
        <rect>
         <x>195</x>
@@ -522,13 +566,14 @@ color: rgb(19, 78, 26);</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: transparent;</string>
+       <string notr="true">background-color: transparent;
+image: url(:/images/icons/icon_microphone.png)</string>
       </property>
       <property name="text">
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap resource="resources.qrc">:/icons/icons/icon_microphone.png</pixmap>
+       <pixmap>:/icons/icon_microphone.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -537,7 +582,7 @@ color: rgb(19, 78, 26);</string>
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLabel" name="icon_highlighter">
+     <widget class="QLabel" name="iconHighlighter">
       <property name="geometry">
        <rect>
         <x>374</x>
@@ -547,13 +592,14 @@ color: rgb(19, 78, 26);</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: transparent;</string>
+       <string notr="true">background-color: transparent;
+image: url(:/images/icons/icon_highlighter.png);</string>
       </property>
       <property name="text">
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap resource="resources.qrc">:/icons/icons/icon_highlighter.png</pixmap>
+       <pixmap>:/icons/icon_highlighter.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -562,7 +608,7 @@ color: rgb(19, 78, 26);</string>
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLabel" name="icon_printer">
+     <widget class="QLabel" name="iconPrinter">
       <property name="geometry">
        <rect>
         <x>563</x>
@@ -572,13 +618,14 @@ color: rgb(19, 78, 26);</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: transparent;</string>
+       <string notr="true">background-color: transparent;
+image: url(:/images/icons/icon_printer.png);</string>
       </property>
       <property name="text">
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap resource="resources.qrc">:/icons/icons/icon_printer.png</pixmap>
+       <pixmap>:/icons/icon_printer.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -592,13 +639,13 @@ color: rgb(19, 78, 26);</string>
      <zorder>widget_2</zorder>
      <zorder>widget</zorder>
      <zorder>verticalLayoutWidget</zorder>
-     <zorder>icon_cable</zorder>
-     <zorder>icon_microphone</zorder>
-     <zorder>icon_highlighter</zorder>
-     <zorder>icon_printer</zorder>
+     <zorder>iconCable</zorder>
+     <zorder>iconMicrophone</zorder>
+     <zorder>iconHighlighter</zorder>
+     <zorder>iconPrinter</zorder>
     </widget>
     <widget class="QWidget" name="page3">
-     <widget class="QLabel" name="equipTitle">
+     <widget class="QLabel" name="equipment">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -626,7 +673,7 @@ background-color: transparent;</string>
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QWidget" name="bottomWidget" native="true">
+     <widget class="QWidget" name="bottomLightGreen" native="true">
       <property name="geometry">
        <rect>
         <x>0</x>
@@ -639,7 +686,7 @@ background-color: transparent;</string>
        <string notr="true">background-color: rgb(217, 223, 206);</string>
       </property>
      </widget>
-     <widget class="QFrame" name="leftFrame">
+     <widget class="QFrame" name="leftContainer">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -777,13 +824,14 @@ QScrollArea {
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">border: 1px solid #134e1a;</string>
+               <string notr="true">border: 1px solid #134e1a;
+image: url(:/images/icons/Projector-Vero HL6810ATV-03.png);</string>
               </property>
               <property name="text">
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="resources.qrc">:/icons/icons/cdm_logo_transparent.png</pixmap>
+               <pixmap>:/icons/cdm_logo_transparent.png</pixmap>
               </property>
               <property name="scaledContents">
                <bool>false</bool>
@@ -953,13 +1001,14 @@ QPushButton[class=&quot;btnPlus&quot;]:hover {
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">border: 1px solid #134e1a;</string>
+               <string notr="true">border: 1px solid #134e1a;
+image: url(:/images/icons/adapter.jpg);</string>
               </property>
               <property name="text">
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="resources.qrc">:/icons/icons/arrow-arrow-removebg-preview.png</pixmap>
+               <pixmap>:/icons/arrow-arrow-removebg-preview.png</pixmap>
               </property>
               <property name="scaledContents">
                <bool>false</bool>
@@ -1129,13 +1178,14 @@ QPushButton[class=&quot;btnPlus&quot;]:hover {
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">border: 1px solid #134e1a;</string>
+               <string notr="true">border: 1px solid #134e1a;
+image: url(:/images/icons/extension cord.png);</string>
               </property>
               <property name="text">
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="resources.qrc">:/icons/icons/icon_highlighter.png</pixmap>
+               <pixmap>:/icons/icon_highlighter.png</pixmap>
               </property>
               <property name="scaledContents">
                <bool>false</bool>
@@ -1370,13 +1420,14 @@ border: 1px solid #000000</string>
              </rect>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: transparent; border: 2px solid transparent;</string>
+             <string notr="true">background-color: transparent; border: 2px solid transparent;
+image: url(:/images/icons/alcohol.png);</string>
             </property>
             <property name="text">
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="resources.qrc">:/icons/icons/icon_cable.png</pixmap>
+             <pixmap>:/icons/icon_cable.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -1443,13 +1494,14 @@ border: 1px solid #000000</string>
              </rect>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: transparent; border: 2px solid transparent;</string>
+             <string notr="true">background-color: transparent; border: 2px solid transparent;
+image: url(:/images/icons/Projector-Vero HL6810ATV-03.png);</string>
             </property>
             <property name="text">
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="resources.qrc">:/icons/icons/cdm_logo_transparent.png</pixmap>
+             <pixmap>:/icons/cdm_logo_transparent.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -1516,13 +1568,14 @@ border: 1px solid #000000</string>
              </rect>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: transparent; border: 2px solid transparent;</string>
+             <string notr="true">background-color: transparent; border: 2px solid transparent;
+image: url(:/images/icons/broom.png);</string>
             </property>
             <property name="text">
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="resources.qrc">:/icons/icons/icon_microphone.png</pixmap>
+             <pixmap>:/icons/icon_microphone.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -1589,13 +1642,14 @@ border: 1px solid #000000</string>
              </rect>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: transparent; border: 2px solid transparent;</string>
+             <string notr="true">background-color: transparent; border: 2px solid transparent;
+image: url(:/images/icons/adapter.jpg);</string>
             </property>
             <property name="text">
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="resources.qrc">:/icons/icons/arrow-arrow-removebg-preview.png</pixmap>
+             <pixmap>:/icons/arrow-arrow-removebg-preview.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -1662,13 +1716,14 @@ border: 1px solid #000000</string>
              </rect>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: transparent; border: 2px solid transparent;</string>
+             <string notr="true">background-color: transparent; border: 2px solid transparent;
+image: url(:/images/icons/rect-lightGreen.png);</string>
             </property>
             <property name="text">
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="resources.qrc">:/icons/icons/rect-lightGreen.png</pixmap>
+             <pixmap>:/icons/rect-lightGreen.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -1735,13 +1790,14 @@ border: 1px solid #000000</string>
              </rect>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: transparent; border: 2px solid transparent;</string>
+             <string notr="true">background-color: transparent; border: 2px solid transparent;
+image: url(:/images/icons/Logo-shadow.png);</string>
             </property>
             <property name="text">
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="resources.qrc">:/icons/icons/icon_5dots.png</pixmap>
+             <pixmap>:/icons/icon_5dots.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -1808,13 +1864,14 @@ border: 1px solid #000000</string>
              </rect>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: transparent; border: 2px solid transparent;</string>
+             <string notr="true">background-color: transparent; border: 2px solid transparent;
+image: url(:/images/icons/batteries.png);</string>
             </property>
             <property name="text">
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="resources.qrc">:/icons/icons/icon_printer.png</pixmap>
+             <pixmap>:/icons/icon_printer.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -1881,13 +1938,14 @@ border: 1px solid #000000</string>
              </rect>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: transparent; border: 2px solid transparent;</string>
+             <string notr="true">background-color: transparent; border: 2px solid transparent;
+image: url(:/images/icons/extension cord.png);</string>
             </property>
             <property name="text">
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="resources.qrc">:/icons/icons/icon_highlighter.png</pixmap>
+             <pixmap>:/icons/icon_highlighter.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -1954,13 +2012,14 @@ border: 1px solid #000000</string>
              </rect>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: transparent; border: 2px solid transparent;</string>
+             <string notr="true">background-color: transparent; border: 2px solid transparent;
+image: url(:/images/icons/usb.jpg);</string>
             </property>
             <property name="text">
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="resources.qrc">:/icons/icons/Logo-shadow.png</pixmap>
+             <pixmap>:/icons/Logo-shadow.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -2027,7 +2086,7 @@ border: 1px solid #000000</string>
      </widget>
     </widget>
     <widget class="QWidget" name="page4">
-     <widget class="QTableView" name="tableView">
+     <widget class="QTableView" name="tableView1">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -2037,7 +2096,7 @@ border: 1px solid #000000</string>
        </rect>
       </property>
      </widget>
-     <widget class="QLabel" name="label">
+     <widget class="QLabel" name="division">
       <property name="geometry">
        <rect>
         <x>16</x>
@@ -2064,7 +2123,7 @@ background-color: rgb(87, 117, 80);
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLabel" name="label_7">
+     <widget class="QLabel" name="office">
       <property name="geometry">
        <rect>
         <x>16</x>
@@ -2091,7 +2150,7 @@ background-color: rgb(87, 117, 80);
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLabel" name="label_8">
+     <widget class="QLabel" name="responsibleCenter">
       <property name="geometry">
        <rect>
         <x>256</x>
@@ -2121,7 +2180,7 @@ background-color: rgb(87, 117, 80);
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="label_14">
+     <widget class="QLabel" name="codeCL">
       <property name="geometry">
        <rect>
         <x>256</x>
@@ -2148,7 +2207,7 @@ background-color: rgb(87, 117, 80);
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLabel" name="label_17">
+     <widget class="QLabel" name="date">
       <property name="geometry">
        <rect>
         <x>516</x>
@@ -2175,7 +2234,7 @@ background-color: rgb(87, 117, 80);
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLabel" name="label_23">
+     <widget class="QLabel" name="risNo">
       <property name="geometry">
        <rect>
         <x>516</x>
@@ -2202,7 +2261,7 @@ background-color: rgb(87, 117, 80);
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit">
+     <widget class="QLineEdit" name="cdmInput">
       <property name="geometry">
        <rect>
         <x>120</x>
@@ -2230,7 +2289,7 @@ border-radius: 10px</string>
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_2">
+     <widget class="QLineEdit" name="input2">
       <property name="geometry">
        <rect>
         <x>120</x>
@@ -2247,7 +2306,7 @@ border-radius: 10px</string>
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_3">
+     <widget class="QLineEdit" name="input4">
       <property name="geometry">
        <rect>
         <x>380</x>
@@ -2264,7 +2323,7 @@ border-radius: 10px</string>
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_4">
+     <widget class="QLineEdit" name="input3">
       <property name="geometry">
        <rect>
         <x>380</x>
@@ -2281,7 +2340,7 @@ border-radius: 10px</string>
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_5">
+     <widget class="QLineEdit" name="input6">
       <property name="geometry">
        <rect>
         <x>640</x>
@@ -2298,7 +2357,7 @@ border-radius: 10px</string>
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_6">
+     <widget class="QLineEdit" name="input5">
       <property name="geometry">
        <rect>
         <x>640</x>
@@ -2315,7 +2374,7 @@ border-radius: 10px</string>
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QFrame" name="frame">
+     <widget class="QFrame" name="containerTop">
       <property name="geometry">
        <rect>
         <x>-1</x>
@@ -2330,7 +2389,7 @@ border-radius: 10px</string>
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QLabel" name="label_24">
+      <widget class="QLabel" name="requisitionIssuanceSlip">
        <property name="geometry">
         <rect>
          <x>220</x>
@@ -2358,7 +2417,7 @@ border-radius: 10px</string>
        </property>
       </widget>
      </widget>
-     <widget class="QFrame" name="frame_2">
+     <widget class="QFrame" name="containerBelowTop">
       <property name="geometry">
        <rect>
         <x>0</x>
@@ -2373,7 +2432,7 @@ border-radius: 10px</string>
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QLabel" name="label_27">
+      <widget class="QLabel" name="requisition">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -2401,7 +2460,7 @@ background-color: rgb(87, 117, 80);</string>
         <set>Qt::AlignCenter</set>
        </property>
       </widget>
-      <widget class="QLabel" name="label_45">
+      <widget class="QLabel" name="issuance">
        <property name="geometry">
         <rect>
          <x>490</x>
@@ -2430,7 +2489,7 @@ background-color: rgb(87, 117, 80);</string>
        </property>
       </widget>
      </widget>
-     <widget class="QLabel" name="label_46">
+     <widget class="QLabel" name="purpose">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -2457,7 +2516,7 @@ background-color: rgb(87, 117, 80);
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_7">
+     <widget class="QLineEdit" name="input7">
       <property name="geometry">
        <rect>
         <x>110</x>
@@ -2474,7 +2533,7 @@ border-radius: 10px</string>
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QTableView" name="tableView_2">
+     <widget class="QTableView" name="tableView2">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -2486,7 +2545,7 @@ border-radius: 10px</string>
      </widget>
     </widget>
     <widget class="QWidget" name="page5">
-     <widget class="QTableView" name="tableView_3">
+     <widget class="QTableView" name="smallTableView">
       <property name="geometry">
        <rect>
         <x>200</x>
@@ -2496,7 +2555,7 @@ border-radius: 10px</string>
        </rect>
       </property>
      </widget>
-     <widget class="QFrame" name="frame_4">
+     <widget class="QFrame" name="containerVerified">
       <property name="geometry">
        <rect>
         <x>260</x>
@@ -2515,7 +2574,7 @@ border-radius: 15px;</string>
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QLabel" name="label_4">
+      <widget class="QLabel" name="verifiedText">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -2541,7 +2600,7 @@ border-radius: 15px;</string>
        </property>
       </widget>
      </widget>
-     <widget class="QFrame" name="frame_13">
+     <widget class="QFrame" name="greenLeftFrame">
       <property name="geometry">
        <rect>
         <x>-1</x>
@@ -2560,7 +2619,7 @@ border-radius: 15px;</string>
        <enum>QFrame::Raised</enum>
       </property>
      </widget>
-     <widget class="QFrame" name="frame_14">
+     <widget class="QFrame" name="containertrippleArrow">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -2579,7 +2638,7 @@ border-radius: 55px;</string>
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QLabel" name="label_5">
+      <widget class="QLabel" name="trippleArrowText">
        <property name="geometry">
         <rect>
          <x>-10</x>
@@ -2609,7 +2668,7 @@ color: #ffffff;</string>
        </property>
       </widget>
      </widget>
-     <widget class="QFrame" name="frame_15">
+     <widget class="QFrame" name="containerBack">
       <property name="geometry">
        <rect>
         <x>90</x>
@@ -2628,7 +2687,7 @@ border-radius: 20px;</string>
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QLabel" name="label_9">
+      <widget class="QLabel" name="backText">
        <property name="geometry">
         <rect>
          <x>50</x>
@@ -2656,7 +2715,7 @@ color: #fefffa;</string>
         <set>Qt::AlignCenter</set>
        </property>
       </widget>
-      <widget class="QLabel" name="label_11">
+      <widget class="QLabel" name="arrowOval">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -2675,13 +2734,14 @@ color: #fefffa;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: transparent;
-color: #fefffa;</string>
+color: #fefffa;
+image: url(:/images/icons/ovalArrow.png);</string>
        </property>
        <property name="text">
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>:/icons/ovalArrow.png</pixmap>
+        <pixmap>:/icons/icons/ovalArrow.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -2691,7 +2751,7 @@ color: #fefffa;</string>
        </property>
       </widget>
      </widget>
-     <widget class="QFrame" name="frame_16">
+     <widget class="QFrame" name="containerDone">
       <property name="geometry">
        <rect>
         <x>560</x>
@@ -2710,7 +2770,7 @@ border-radius: 20px;</string>
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QLabel" name="label_10">
+      <widget class="QLabel" name="doneText">
        <property name="geometry">
         <rect>
          <x>40</x>
@@ -2739,7 +2799,7 @@ color: #fefffa;</string>
        </property>
       </widget>
      </widget>
-     <widget class="QLabel" name="label_6">
+     <widget class="QLabel" name="viewLabel">
       <property name="geometry">
        <rect>
         <x>280</x>
@@ -2824,13 +2884,14 @@ color: #000000;</string>
              </rect>
             </property>
             <property name="styleSheet">
-             <string notr="true">border: 2px solid transparent;</string>
+             <string notr="true">border: 2px solid transparent;
+image: url(:/images/icons/wiredMicrophone.png);</string>
             </property>
             <property name="text">
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="resources.qrc">:/icons/icons/icon_cable.png</pixmap>
+             <pixmap>:/icons/icons/icon_cable.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -2897,13 +2958,14 @@ color: #000000;</string>
              </rect>
             </property>
             <property name="styleSheet">
-             <string notr="true">border: 2px solid transparent;</string>
+             <string notr="true">border: 2px solid transparent;
+image: url(:/images/icons/microphone.png);</string>
             </property>
             <property name="text">
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="resources.qrc">:/icons/icons/cdm_logo_transparent.png</pixmap>
+             <pixmap>:/icons/icons/cdm_logo_transparent.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -2970,13 +3032,14 @@ color: #000000;</string>
              </rect>
             </property>
             <property name="styleSheet">
-             <string notr="true">border: 2px solid transparent;</string>
+             <string notr="true">border: 2px solid transparent;
+image: url(:/images/icons/trsCables.png);</string>
             </property>
             <property name="text">
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="resources.qrc">:/icons/icons/icon_microphone.png</pixmap>
+             <pixmap>:/icons/icons/icon_microphone.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -3046,13 +3109,14 @@ color: #000000;</string>
              </rect>
             </property>
             <property name="styleSheet">
-             <string notr="true">border: 2px solid transparent;</string>
+             <string notr="true">border: 2px solid transparent;
+image: url(:/images/icons/Active PA Speaker.jpg);</string>
             </property>
             <property name="text">
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="resources.qrc">:/icons/icons/arrow-arrow-removebg-preview.png</pixmap>
+             <pixmap>:/icons/icons/arrow-arrow-removebg-preview.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -3119,13 +3183,14 @@ color: #000000;</string>
              </rect>
             </property>
             <property name="styleSheet">
-             <string notr="true">border: 2px solid transparent;</string>
+             <string notr="true">border: 2px solid transparent;
+image: url(:/images/icons/avr.png);</string>
             </property>
             <property name="text">
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="resources.qrc">:/icons/icons/rect-lightGreen.png</pixmap>
+             <pixmap>:/icons/icons/rect-lightGreen.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -3192,13 +3257,14 @@ color: #000000;</string>
              </rect>
             </property>
             <property name="styleSheet">
-             <string notr="true">border: 2px solid transparent;</string>
+             <string notr="true">border: 2px solid transparent;
+image: url(:/images/icons/equalizer.jpg);</string>
             </property>
             <property name="text">
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="resources.qrc">:/icons/icons/icon_5dots.png</pixmap>
+             <pixmap>:/icons/icons/icon_5dots.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -3265,13 +3331,14 @@ color: #000000;</string>
              </rect>
             </property>
             <property name="styleSheet">
-             <string notr="true">border: 2px solid transparent;</string>
+             <string notr="true">border: 2px solid transparent;
+image: url(:/images/icons/xlrCables.jpg);</string>
             </property>
             <property name="text">
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="resources.qrc">:/icons/icons/icon_printer.png</pixmap>
+             <pixmap>:/icons/icons/icon_printer.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -3338,13 +3405,14 @@ color: #000000;</string>
              </rect>
             </property>
             <property name="styleSheet">
-             <string notr="true">border: 2px solid transparent;</string>
+             <string notr="true">border: 2px solid transparent;
+image: url(:/images/icons/SpeakerSubwoofer.png);</string>
             </property>
             <property name="text">
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="resources.qrc">:/icons/icons/icon_highlighter.png</pixmap>
+             <pixmap>:/icons/icons/icon_highlighter.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -3411,13 +3479,14 @@ color: #000000;</string>
              </rect>
             </property>
             <property name="styleSheet">
-             <string notr="true">border: 2px solid transparent;</string>
+             <string notr="true">border: 2px solid transparent;
+image: url(:/images/icons/AudioProcessor.png);</string>
             </property>
             <property name="text">
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="resources.qrc">:/icons/icons/Logo-shadow.png</pixmap>
+             <pixmap>:/icons/icons/Logo-shadow.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -3633,13 +3702,14 @@ QScrollArea {
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">border: 1px solid #134e1a;</string>
+               <string notr="true">border: 1px solid #134e1a;
+image: url(:/images/icons/microphone.png);</string>
               </property>
               <property name="text">
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="resources.qrc">:/icons/icons/cdm_logo_transparent.png</pixmap>
+               <pixmap>:/icons/icons/cdm_logo_transparent.png</pixmap>
               </property>
               <property name="scaledContents">
                <bool>false</bool>
@@ -3809,13 +3879,14 @@ QPushButton[class=&quot;btnPlus&quot;]:hover {
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">border: 1px solid #134e1a;</string>
+               <string notr="true">border: 1px solid #134e1a;
+image: url(:/images/icons/avr.png);</string>
               </property>
               <property name="text">
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="resources.qrc">:/icons/icons/arrow-arrow-removebg-preview.png</pixmap>
+               <pixmap>:/icons/icons/arrow-arrow-removebg-preview.png</pixmap>
               </property>
               <property name="scaledContents">
                <bool>false</bool>
@@ -3985,13 +4056,14 @@ QPushButton[class=&quot;btnPlus&quot;]:hover {
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">border: 1px solid #134e1a;</string>
+               <string notr="true">border: 1px solid #134e1a;
+image: url(:/images/icons/wiredMicrophone.png);</string>
               </property>
               <property name="text">
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="resources.qrc">:/icons/icons/icon_highlighter.png</pixmap>
+               <pixmap>:/icons/icons/icon_highlighter.png</pixmap>
               </property>
               <property name="scaledContents">
                <bool>false</bool>
@@ -4204,7 +4276,7 @@ background-color: transparent;</string>
      </widget>
     </widget>
     <widget class="QWidget" name="page7">
-     <widget class="QLineEdit" name="lineEdit_8">
+     <widget class="QLineEdit" name="input44">
       <property name="geometry">
        <rect>
         <x>380</x>
@@ -4221,7 +4293,7 @@ border-radius: 10px</string>
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_9">
+     <widget class="QLineEdit" name="input77">
       <property name="geometry">
        <rect>
         <x>110</x>
@@ -4238,7 +4310,7 @@ border-radius: 10px</string>
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_10">
+     <widget class="QLineEdit" name="cdmInput2">
       <property name="geometry">
        <rect>
         <x>120</x>
@@ -4266,7 +4338,7 @@ border-radius: 10px</string>
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QFrame" name="frame_7">
+     <widget class="QFrame" name="containerTop2">
       <property name="geometry">
        <rect>
         <x>-1</x>
@@ -4281,7 +4353,7 @@ border-radius: 10px</string>
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QLabel" name="label_26">
+      <widget class="QLabel" name="requisitionIssuanceSlip2">
        <property name="geometry">
         <rect>
          <x>220</x>
@@ -4309,7 +4381,7 @@ border-radius: 10px</string>
        </property>
       </widget>
      </widget>
-     <widget class="QLabel" name="label_16">
+     <widget class="QLabel" name="codeCL2">
       <property name="geometry">
        <rect>
         <x>256</x>
@@ -4336,7 +4408,7 @@ background-color: rgb(87, 117, 80);
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_11">
+     <widget class="QLineEdit" name="input33">
       <property name="geometry">
        <rect>
         <x>380</x>
@@ -4353,7 +4425,7 @@ border-radius: 10px</string>
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLabel" name="label_18">
+     <widget class="QLabel" name="date2">
       <property name="geometry">
        <rect>
         <x>516</x>
@@ -4380,7 +4452,7 @@ background-color: rgb(87, 117, 80);
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QTableView" name="tableView_4">
+     <widget class="QTableView" name="tableView11">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -4390,7 +4462,7 @@ background-color: rgb(87, 117, 80);
        </rect>
       </property>
      </widget>
-     <widget class="QFrame" name="frame_8">
+     <widget class="QFrame" name="containerBelowTop_2">
       <property name="geometry">
        <rect>
         <x>0</x>
@@ -4462,7 +4534,7 @@ background-color: rgb(87, 117, 80);</string>
        </property>
       </widget>
      </widget>
-     <widget class="QLabel" name="label_19">
+     <widget class="QLabel" name="responsibleCenter2">
       <property name="geometry">
        <rect>
         <x>256</x>
@@ -4492,7 +4564,7 @@ background-color: rgb(87, 117, 80);
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="label_30">
+     <widget class="QLabel" name="risNo2">
       <property name="geometry">
        <rect>
         <x>516</x>
@@ -4519,7 +4591,7 @@ background-color: rgb(87, 117, 80);
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_12">
+     <widget class="QLineEdit" name="input22">
       <property name="geometry">
        <rect>
         <x>120</x>
@@ -4536,7 +4608,7 @@ border-radius: 10px</string>
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLabel" name="label_20">
+     <widget class="QLabel" name="office2">
       <property name="geometry">
        <rect>
         <x>16</x>
@@ -4563,7 +4635,7 @@ background-color: rgb(87, 117, 80);
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLabel" name="label_49">
+     <widget class="QLabel" name="purpose2">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -4590,7 +4662,7 @@ background-color: rgb(87, 117, 80);
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLabel" name="label_21">
+     <widget class="QLabel" name="division2">
       <property name="geometry">
        <rect>
         <x>16</x>
@@ -4617,7 +4689,7 @@ background-color: rgb(87, 117, 80);
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_13">
+     <widget class="QLineEdit" name="input66">
       <property name="geometry">
        <rect>
         <x>640</x>
@@ -4634,7 +4706,7 @@ border-radius: 10px</string>
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QTableView" name="tableView_5">
+     <widget class="QTableView" name="tableView22">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -4644,7 +4716,7 @@ border-radius: 10px</string>
        </rect>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_14">
+     <widget class="QLineEdit" name="input55">
       <property name="geometry">
        <rect>
         <x>640</x>
@@ -4663,7 +4735,7 @@ border-radius: 10px</string>
      </widget>
     </widget>
     <widget class="QWidget" name="page8">
-     <widget class="QFrame" name="frame_17">
+     <widget class="QFrame" name="containerTripleArrow2">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -4682,7 +4754,7 @@ border-radius: 55px;</string>
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QLabel" name="label_81">
+      <widget class="QLabel" name="tripleArrow2">
        <property name="geometry">
         <rect>
          <x>-10</x>
@@ -4712,7 +4784,7 @@ color: #ffffff;</string>
        </property>
       </widget>
      </widget>
-     <widget class="QFrame" name="frame_18">
+     <widget class="QFrame" name="containerBack2">
       <property name="geometry">
        <rect>
         <x>90</x>
@@ -4731,7 +4803,7 @@ border-radius: 20px;</string>
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QLabel" name="label_84">
+      <widget class="QLabel" name="backText2">
        <property name="geometry">
         <rect>
          <x>50</x>
@@ -4759,7 +4831,7 @@ color: #fefffa;</string>
         <set>Qt::AlignCenter</set>
        </property>
       </widget>
-      <widget class="QLabel" name="label_85">
+      <widget class="QLabel" name="arrowOval2">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -4794,7 +4866,7 @@ color: #fefffa;</string>
        </property>
       </widget>
      </widget>
-     <widget class="QTableView" name="tableView_10">
+     <widget class="QTableView" name="smallTableView2">
       <property name="geometry">
        <rect>
         <x>200</x>
@@ -4804,7 +4876,7 @@ color: #fefffa;</string>
        </rect>
       </property>
      </widget>
-     <widget class="QFrame" name="frame_19">
+     <widget class="QFrame" name="greenLeftFrame2">
       <property name="geometry">
        <rect>
         <x>-1</x>
@@ -4823,7 +4895,7 @@ color: #fefffa;</string>
        <enum>QFrame::Raised</enum>
       </property>
      </widget>
-     <widget class="QLabel" name="label_86">
+     <widget class="QLabel" name="viewText2">
       <property name="geometry">
        <rect>
         <x>280</x>
@@ -4851,7 +4923,7 @@ color: #000000;</string>
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QFrame" name="frame_20">
+     <widget class="QFrame" name="containerDone2">
       <property name="geometry">
        <rect>
         <x>560</x>
@@ -4870,7 +4942,7 @@ border-radius: 20px;</string>
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QLabel" name="label_87">
+      <widget class="QLabel" name="doneText2">
        <property name="geometry">
         <rect>
          <x>40</x>
@@ -4899,7 +4971,7 @@ color: #fefffa;</string>
        </property>
       </widget>
      </widget>
-     <widget class="QFrame" name="frame_21">
+     <widget class="QFrame" name="containerVerified2">
       <property name="geometry">
        <rect>
         <x>260</x>
@@ -4918,7 +4990,7 @@ border-radius: 15px;</string>
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QLabel" name="label_88">
+      <widget class="QLabel" name="verifiedText2">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -4944,13 +5016,13 @@ border-radius: 15px;</string>
        </property>
       </widget>
      </widget>
-     <zorder>frame_18</zorder>
-     <zorder>tableView_10</zorder>
-     <zorder>frame_19</zorder>
-     <zorder>label_86</zorder>
-     <zorder>frame_20</zorder>
-     <zorder>frame_21</zorder>
-     <zorder>frame_17</zorder>
+     <zorder>containerBack2</zorder>
+     <zorder>smallTableView2</zorder>
+     <zorder>greenLeftFrame2</zorder>
+     <zorder>viewText2</zorder>
+     <zorder>containerDone2</zorder>
+     <zorder>containerVerified2</zorder>
+     <zorder>containerTripleArrow2</zorder>
     </widget>
     <widget class="QWidget" name="page9">
      <widget class="QFrame" name="leftFrame_3">
@@ -5091,13 +5163,14 @@ QScrollArea {
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">border: 1px solid #134e1a;</string>
+               <string notr="true">border: 1px solid #134e1a;
+image: url(:/images/icons/WhiteboardInk.jpg);</string>
               </property>
               <property name="text">
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="resources.qrc">:/icons/icons/cdm_logo_transparent.png</pixmap>
+               <pixmap>:/icons/icons/cdm_logo_transparent.png</pixmap>
               </property>
               <property name="scaledContents">
                <bool>false</bool>
@@ -5267,13 +5340,14 @@ QPushButton[class=&quot;btnPlus&quot;]:hover {
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">border: 1px solid #134e1a;</string>
+               <string notr="true">border: 1px solid #134e1a;
+image: url(:/images/icons/highlighterStabilo.png);</string>
               </property>
               <property name="text">
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="resources.qrc">:/icons/icons/arrow-arrow-removebg-preview.png</pixmap>
+               <pixmap>:/icons/icons/arrow-arrow-removebg-preview.png</pixmap>
               </property>
               <property name="scaledContents">
                <bool>false</bool>
@@ -5443,13 +5517,14 @@ QPushButton[class=&quot;btnPlus&quot;]:hover {
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">border: 1px solid #134e1a;</string>
+               <string notr="true">border: 1px solid #134e1a;
+image: url(:/images/icons/mechanicalPencils.jpg);</string>
               </property>
               <property name="text">
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="resources.qrc">:/icons/icons/icon_highlighter.png</pixmap>
+               <pixmap>:/icons/icons/icon_highlighter.png</pixmap>
               </property>
               <property name="scaledContents">
                <bool>false</bool>
@@ -5697,13 +5772,14 @@ border: 1px solid #000000</string>
              </rect>
             </property>
             <property name="styleSheet">
-             <string notr="true">border: 2px solid transparent;</string>
+             <string notr="true">border: 2px solid transparent;
+image: url(:/images/icons/paperClips.jpg);</string>
             </property>
             <property name="text">
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="resources.qrc">:/icons/icons/icon_cable.png</pixmap>
+             <pixmap>:/icons/icons/icon_cable.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -5770,13 +5846,14 @@ border: 1px solid #000000</string>
              </rect>
             </property>
             <property name="styleSheet">
-             <string notr="true">border: 2px solid transparent;</string>
+             <string notr="true">border: 2px solid transparent;
+image: url(:/images/icons/Artline500A-Whiteboard-Marker-_black_white_blue.jpg);</string>
             </property>
             <property name="text">
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="resources.qrc">:/icons/icons/cdm_logo_transparent.png</pixmap>
+             <pixmap>:/icons/icons/cdm_logo_transparent.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -5843,13 +5920,14 @@ border: 1px solid #000000</string>
              </rect>
             </property>
             <property name="styleSheet">
-             <string notr="true">border: 2px solid transparent;</string>
+             <string notr="true">border: 2px solid transparent;
+image: url(:/images/icons/ballpens_panda.png);</string>
             </property>
             <property name="text">
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="resources.qrc">:/icons/icons/icon_microphone.png</pixmap>
+             <pixmap>:/icons/icons/icon_microphone.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -5916,13 +5994,14 @@ border: 1px solid #000000</string>
              </rect>
             </property>
             <property name="styleSheet">
-             <string notr="true">border: 2px solid transparent;</string>
+             <string notr="true">border: 2px solid transparent;
+image: url(:/images/icons/PermanentMarkers.png);</string>
             </property>
             <property name="text">
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="resources.qrc">:/icons/icons/arrow-arrow-removebg-preview.png</pixmap>
+             <pixmap>:/icons/icons/arrow-arrow-removebg-preview.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -5989,13 +6068,14 @@ border: 1px solid #000000</string>
              </rect>
             </property>
             <property name="styleSheet">
-             <string notr="true">border: 2px solid transparent;</string>
+             <string notr="true">border: 2px solid transparent;
+image: url(:/images/icons/mechanicalPencils.jpg);</string>
             </property>
             <property name="text">
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="resources.qrc">:/icons/icons/rect-lightGreen.png</pixmap>
+             <pixmap>:/icons/icons/rect-lightGreen.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -6062,13 +6142,14 @@ border: 1px solid #000000</string>
              </rect>
             </property>
             <property name="styleSheet">
-             <string notr="true">border: 2px solid transparent;</string>
+             <string notr="true">border: 2px solid transparent;
+image: url(:/images/icons/stapler.png);</string>
             </property>
             <property name="text">
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="resources.qrc">:/icons/icons/icon_5dots.png</pixmap>
+             <pixmap>:/icons/icons/icon_5dots.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -6135,13 +6216,14 @@ border: 1px solid #000000</string>
              </rect>
             </property>
             <property name="styleSheet">
-             <string notr="true">border: 2px solid transparent;</string>
+             <string notr="true">border: 2px solid transparent;
+image: url(:/images/icons/highlighterStabilo.png);</string>
             </property>
             <property name="text">
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="resources.qrc">:/icons/icons/icon_printer.png</pixmap>
+             <pixmap>:/icons/icons/icon_printer.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -6208,13 +6290,14 @@ border: 1px solid #000000</string>
              </rect>
             </property>
             <property name="styleSheet">
-             <string notr="true">border: 2px solid transparent;</string>
+             <string notr="true">border: 2px solid transparent;
+image: url(:/images/icons/WhiteboardInk.jpg);</string>
             </property>
             <property name="text">
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="resources.qrc">:/icons/icons/icon_highlighter.png</pixmap>
+             <pixmap>:/icons/icons/icon_highlighter.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -6281,13 +6364,14 @@ border: 1px solid #000000</string>
              </rect>
             </property>
             <property name="styleSheet">
-             <string notr="true">border: 2px solid transparent;</string>
+             <string notr="true">border: 2px solid transparent;
+image: url(:/images/icons/pencils.jpg);</string>
             </property>
             <property name="text">
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="resources.qrc">:/icons/icons/Logo-shadow.png</pixmap>
+             <pixmap>:/icons/icons/Logo-shadow.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -6844,7 +6928,7 @@ border-radius: 10px</string>
      </widget>
     </widget>
     <widget class="QWidget" name="page11">
-     <widget class="QFrame" name="frame_22">
+     <widget class="QFrame" name="containerTripleArrow3">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -6863,7 +6947,7 @@ border-radius: 55px;</string>
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QLabel" name="label_89">
+      <widget class="QLabel" name="tripleArrowText3">
        <property name="geometry">
         <rect>
          <x>-10</x>
@@ -6893,7 +6977,7 @@ color: #ffffff;</string>
        </property>
       </widget>
      </widget>
-     <widget class="QFrame" name="frame_23">
+     <widget class="QFrame" name="containerBack3">
       <property name="geometry">
        <rect>
         <x>90</x>
@@ -6912,7 +6996,7 @@ border-radius: 20px;</string>
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QLabel" name="label_90">
+      <widget class="QLabel" name="backText3">
        <property name="geometry">
         <rect>
          <x>50</x>
@@ -6940,7 +7024,7 @@ color: #fefffa;</string>
         <set>Qt::AlignCenter</set>
        </property>
       </widget>
-      <widget class="QLabel" name="label_91">
+      <widget class="QLabel" name="arrowOval3">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -6985,7 +7069,7 @@ color: #fefffa;</string>
        </rect>
       </property>
      </widget>
-     <widget class="QFrame" name="frame_24">
+     <widget class="QFrame" name="greenLeftFrame3">
       <property name="geometry">
        <rect>
         <x>-1</x>
@@ -7004,7 +7088,7 @@ color: #fefffa;</string>
        <enum>QFrame::Raised</enum>
       </property>
      </widget>
-     <widget class="QLabel" name="label_92">
+     <widget class="QLabel" name="viewText3">
       <property name="geometry">
        <rect>
         <x>280</x>
@@ -7032,7 +7116,7 @@ color: #000000;</string>
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QFrame" name="frame_25">
+     <widget class="QFrame" name="containerDone3">
       <property name="geometry">
        <rect>
         <x>560</x>
@@ -7051,7 +7135,7 @@ border-radius: 20px;</string>
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QLabel" name="label_93">
+      <widget class="QLabel" name="doneText3">
        <property name="geometry">
         <rect>
          <x>40</x>
@@ -7080,7 +7164,7 @@ color: #fefffa;</string>
        </property>
       </widget>
      </widget>
-     <widget class="QFrame" name="frame_26">
+     <widget class="QFrame" name="containerVerified3">
       <property name="geometry">
        <rect>
         <x>260</x>
@@ -7099,7 +7183,7 @@ border-radius: 15px;</string>
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QLabel" name="label_94">
+      <widget class="QLabel" name="verifiedText3">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -7125,13 +7209,13 @@ border-radius: 15px;</string>
        </property>
       </widget>
      </widget>
-     <zorder>frame_23</zorder>
+     <zorder>containerBack3</zorder>
      <zorder>tableView_11</zorder>
-     <zorder>frame_24</zorder>
-     <zorder>label_92</zorder>
-     <zorder>frame_25</zorder>
-     <zorder>frame_26</zorder>
-     <zorder>frame_22</zorder>
+     <zorder>greenLeftFrame3</zorder>
+     <zorder>viewText3</zorder>
+     <zorder>containerDone3</zorder>
+     <zorder>containerVerified3</zorder>
+     <zorder>containerTripleArrow3</zorder>
     </widget>
     <widget class="QWidget" name="page12">
      <widget class="QScrollArea" name="rightScrollArea_4">
@@ -7161,9 +7245,9 @@ border-radius: 15px;</string>
        <widget class="QWidget" name="widget_9" native="true">
         <property name="geometry">
          <rect>
-          <x>0</x>
+          <x>20</x>
           <y>0</y>
-          <width>491</width>
+          <width>471</width>
           <height>481</height>
          </rect>
         </property>
@@ -7173,9 +7257,9 @@ border-radius: 15px;</string>
         <widget class="QWidget" name="verticalLayoutWidget_2">
          <property name="geometry">
           <rect>
-           <x>9</x>
-           <y>9</y>
-           <width>471</width>
+           <x>10</x>
+           <y>10</y>
+           <width>451</width>
            <height>461</height>
           </rect>
          </property>
@@ -7386,9 +7470,9 @@ background-color: transparent;</string>
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>130</y>
-        <width>251</width>
-        <height>381</height>
+        <y>110</y>
+        <width>271</width>
+        <height>401</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -7404,15 +7488,15 @@ background-color: transparent;</string>
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>0</y>
-         <width>251</width>
-         <height>41</height>
+         <y>10</y>
+         <width>271</width>
+         <height>51</height>
         </rect>
        </property>
        <property name="font">
         <font>
          <family>Georgia</family>
-         <pointsize>20</pointsize>
+         <pointsize>15</pointsize>
          <weight>75</weight>
          <bold>true</bold>
         </font>
@@ -7422,627 +7506,19 @@ background-color: transparent;</string>
 background-color: rgb(245, 248, 238);</string>
        </property>
        <property name="text">
-        <string>Selected Item</string>
+        <string>Selected Item:</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
        </property>
-      </widget>
-      <widget class="QScrollArea" name="leftScrollArea_4">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>50</y>
-         <width>231</width>
-         <height>241</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QScrollBar:vertical {
-    border: none;
-    background: #9DA5AB;   /* track */
-    width: 12px;
-    margin: 0px 0px 0px 0px;
-    border-radius: 6px;
-}
-
-QScrollBar::handle:vertical {
-    background: #134E1A;   /* thumb */
-    min-height: 20px;
-    border-radius: 6px;
-}
-
-QScrollBar::add-line:vertical,
-QScrollBar::sub-line:vertical {
-    height: 0px;   /* removes arrows */
-}
-
-QScrollBar::add-page:vertical,
-QScrollBar::sub-page:vertical {
-    background: none;
-}
-
-QScrollArea {
-	border: none;
-}</string>
-       </property>
-       <property name="verticalScrollBarPolicy">
-        <enum>Qt::ScrollBarAlwaysOn</enum>
-       </property>
-       <property name="horizontalScrollBarPolicy">
-        <enum>Qt::ScrollBarAlwaysOff</enum>
-       </property>
-       <property name="widgetResizable">
+       <property name="wordWrap">
         <bool>true</bool>
        </property>
-       <widget class="QWidget" name="content_4">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>219</width>
-          <height>241</height>
-         </rect>
-        </property>
-        <widget class="QWidget" name="verticalLayoutWidget_6">
-         <property name="geometry">
-          <rect>
-           <x>0</x>
-           <y>0</y>
-           <width>226</width>
-           <height>241</height>
-          </rect>
-         </property>
-         <layout class="QVBoxLayout" name="vLayout_4">
-          <item>
-           <layout class="QHBoxLayout" name="hLayout1_4">
-            <property name="spacing">
-             <number>20</number>
-            </property>
-            <item>
-             <widget class="QLabel" name="imageLeft_10">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>50</width>
-                <height>50</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>50</width>
-                <height>50</height>
-               </size>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">border: 1px solid #134e1a;</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="pixmap">
-               <pixmap resource="resources.qrc">:/icons/icons/cdm_logo_transparent.png</pixmap>
-              </property>
-              <property name="scaledContents">
-               <bool>false</bool>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <layout class="QHBoxLayout" name="hLayoutRight_10" stretch="0,0,0">
-              <property name="spacing">
-               <number>0</number>
-              </property>
-              <item>
-               <widget class="QPushButton" name="minusBtn1_4">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="minimumSize">
-                 <size>
-                  <width>50</width>
-                  <height>50</height>
-                 </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <pointsize>-1</pointsize>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">QPushButton[class=&quot;btnMinus&quot;] {
-    border-top-left-radius: 12px;
-	border-bottom-left-radius: 12px;
-    font-size: 20px;
-    font-weight: bold;
-    background-color: rgb(217, 223, 206);
-	color: rgb(19, 78, 26);
-}
-
-QPushButton[class=&quot;btnMinus&quot;]:hover {
-    color: red;
-}</string>
-                </property>
-                <property name="text">
-                 <string>-</string>
-                </property>
-                <property name="default">
-                 <bool>false</bool>
-                </property>
-                <property name="flat">
-                 <bool>false</bool>
-                </property>
-                <property name="class" stdset="0">
-                 <string>btnMinus</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="counter1_4">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="minimumSize">
-                 <size>
-                  <width>50</width>
-                  <height>50</height>
-                 </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <family>Georgia</family>
-                  <pointsize>17</pointsize>
-                  <stylestrategy>PreferDefault</stylestrategy>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">color: rgb(19, 78, 26);
-background-color: rgb(217, 223, 206);</string>
-                </property>
-                <property name="text">
-                 <string>1</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="plusBtn1_4">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="minimumSize">
-                 <size>
-                  <width>50</width>
-                  <height>50</height>
-                 </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <pointsize>-1</pointsize>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">QPushButton[class=&quot;btnPlus&quot;] {
-    border-top-right-radius: 12px;
-	border-bottom-right-radius: 12px;
-	color: rgb(19, 78, 26);
-    font-size: 20px;
-    font-weight: bold;
-    background-color: rgb(217, 223, 206);
-}
-
-QPushButton[class=&quot;btnPlus&quot;]:hover {
-    color: green;
-}</string>
-                </property>
-                <property name="text">
-                 <string>+</string>
-                </property>
-                <property name="class" stdset="0">
-                 <string>btnPlus</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-           </layout>
-          </item>
-          <item>
-           <layout class="QHBoxLayout" name="hLayout2_4">
-            <property name="spacing">
-             <number>20</number>
-            </property>
-            <item>
-             <widget class="QLabel" name="imageLeft_11">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>50</width>
-                <height>50</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>50</width>
-                <height>50</height>
-               </size>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">border: 1px solid #134e1a;</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="pixmap">
-               <pixmap resource="resources.qrc">:/icons/icons/arrow-arrow-removebg-preview.png</pixmap>
-              </property>
-              <property name="scaledContents">
-               <bool>false</bool>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <layout class="QHBoxLayout" name="hLayoutRight_11">
-              <property name="spacing">
-               <number>0</number>
-              </property>
-              <item>
-               <widget class="QPushButton" name="minusBtn3_4">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="minimumSize">
-                 <size>
-                  <width>50</width>
-                  <height>50</height>
-                 </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <pointsize>-1</pointsize>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">QPushButton[class=&quot;btnMinus&quot;] {
-    border-top-left-radius: 12px;
-	border-bottom-left-radius: 12px;
-    font-size: 20px;
-    font-weight: bold;
-    background-color: rgb(217, 223, 206);
-	color: rgb(19, 78, 26);
-}
-
-QPushButton[class=&quot;btnMinus&quot;]:hover {
-    color: red;
-}</string>
-                </property>
-                <property name="text">
-                 <string>-</string>
-                </property>
-                <property name="default">
-                 <bool>false</bool>
-                </property>
-                <property name="flat">
-                 <bool>false</bool>
-                </property>
-                <property name="class" stdset="0">
-                 <string>btnMinus</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="counter3_4">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="minimumSize">
-                 <size>
-                  <width>50</width>
-                  <height>50</height>
-                 </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <family>Georgia</family>
-                  <pointsize>17</pointsize>
-                  <stylestrategy>PreferDefault</stylestrategy>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">color: rgb(19, 78, 26);
-background-color: rgb(217, 223, 206);</string>
-                </property>
-                <property name="text">
-                 <string>1</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="plusBtn3_4">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="minimumSize">
-                 <size>
-                  <width>50</width>
-                  <height>50</height>
-                 </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <pointsize>-1</pointsize>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">QPushButton[class=&quot;btnPlus&quot;] {
-    border-top-right-radius: 12px;
-	border-bottom-right-radius: 12px;
-	color: rgb(19, 78, 26);
-    font-size: 20px;
-    font-weight: bold;
-    background-color: rgb(217, 223, 206);
-}
-
-QPushButton[class=&quot;btnPlus&quot;]:hover {
-    color: green;
-}</string>
-                </property>
-                <property name="text">
-                 <string>+</string>
-                </property>
-                <property name="class" stdset="0">
-                 <string>btnPlus</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-           </layout>
-          </item>
-          <item>
-           <layout class="QHBoxLayout" name="hLayout3_4">
-            <property name="spacing">
-             <number>20</number>
-            </property>
-            <item>
-             <widget class="QLabel" name="imageLeft_12">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>50</width>
-                <height>50</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>50</width>
-                <height>50</height>
-               </size>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">border: 1px solid #134e1a;</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="pixmap">
-               <pixmap resource="resources.qrc">:/icons/icons/icon_highlighter.png</pixmap>
-              </property>
-              <property name="scaledContents">
-               <bool>false</bool>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <layout class="QHBoxLayout" name="hLayoutRight_12">
-              <property name="spacing">
-               <number>0</number>
-              </property>
-              <item>
-               <widget class="QPushButton" name="minusBtn2_4">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="minimumSize">
-                 <size>
-                  <width>50</width>
-                  <height>50</height>
-                 </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <pointsize>-1</pointsize>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">QPushButton[class=&quot;btnMinus&quot;] {
-    border-top-left-radius: 12px;
-	border-bottom-left-radius: 12px;
-    font-size: 20px;
-    font-weight: bold;
-    background-color: rgb(217, 223, 206);
-	color: rgb(19, 78, 26);
-}
-
-QPushButton[class=&quot;btnMinus&quot;]:hover {
-    color: red;
-}</string>
-                </property>
-                <property name="text">
-                 <string>-</string>
-                </property>
-                <property name="default">
-                 <bool>false</bool>
-                </property>
-                <property name="flat">
-                 <bool>false</bool>
-                </property>
-                <property name="class" stdset="0">
-                 <string>btnMinus</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="counter2_4">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="minimumSize">
-                 <size>
-                  <width>50</width>
-                  <height>50</height>
-                 </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <family>Georgia</family>
-                  <pointsize>17</pointsize>
-                  <stylestrategy>PreferDefault</stylestrategy>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">color: rgb(19, 78, 26);
-background-color: rgb(217, 223, 206);</string>
-                </property>
-                <property name="text">
-                 <string>1</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="plusBtn2_4">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="minimumSize">
-                 <size>
-                  <width>50</width>
-                  <height>50</height>
-                 </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <pointsize>-1</pointsize>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">QPushButton[class=&quot;btnPlus&quot;] {
-    border-top-right-radius: 12px;
-	border-bottom-right-radius: 12px;
-	color: rgb(19, 78, 26);
-    font-size: 20px;
-    font-weight: bold;
-    background-color: rgb(217, 223, 206);
-}
-
-QPushButton[class=&quot;btnPlus&quot;]:hover {
-    color: green;
-}</string>
-                </property>
-                <property name="text">
-                 <string>+</string>
-                </property>
-                <property name="class" stdset="0">
-                 <string>btnPlus</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-           </layout>
-          </item>
-          <item>
-           <spacer name="verticalSpacer_4">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>40</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-         </layout>
-        </widget>
-       </widget>
       </widget>
       <widget class="QPushButton" name="proceedBtn_4">
        <property name="geometry">
         <rect>
-         <x>50</x>
+         <x>60</x>
          <y>310</y>
          <width>141</width>
          <height>41</height>
@@ -8056,6 +7532,272 @@ border: 1px solid #000000</string>
        <property name="text">
         <string>PROCEED</string>
        </property>
+      </widget>
+      <widget class="QWidget" name="widget_7" native="true">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>80</y>
+         <width>251</width>
+         <height>201</height>
+        </rect>
+       </property>
+       <widget class="QWidget" name="horizontalLayoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>60</y>
+          <width>251</width>
+          <height>52</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QLabel" name="selectItemTitle_8">
+           <property name="font">
+            <font>
+             <family>Georgia</family>
+             <pointsize>12</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(19, 78, 26);
+background-color: rgb(245, 248, 238);</string>
+           </property>
+           <property name="text">
+            <string>Paper Size</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="comboBox_2">
+           <property name="font">
+            <font>
+             <family>Georgia</family>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">border: none;
+background-color: #D9DFCE;
+border-radius: 12px;
+height: 30px;
+</string>
+           </property>
+           <property name="currentIndex">
+            <number>3</number>
+           </property>
+           <item>
+            <property name="text">
+             <string>A2 420 x 594 mm</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>A3 297 x 420 mm</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>A3+ 329 x 483 mm</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>A4 210 x 297 mm</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>B3 364 x 515 mm</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>B4 257 x 364 mm</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Legal 8 1/2 x 14 in</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Letter 8 1/2 x 11 in</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>User-Defined</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="horizontalLayoutWidget_2">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>120</y>
+          <width>251</width>
+          <height>52</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QLabel" name="selectItemTitle_9">
+           <property name="font">
+            <font>
+             <family>Georgia</family>
+             <pointsize>12</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(19, 78, 26);
+background-color: rgb(245, 248, 238);</string>
+           </property>
+           <property name="text">
+            <string>Quantity</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="spinBox">
+           <property name="font">
+            <font>
+             <family>Georgia</family>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">border: none;
+background-color: #D9DFCE;
+border-radius: 12px;
+height: 30px;</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="buttonSymbols">
+            <enum>QAbstractSpinBox::UpDownArrows</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="horizontalLayoutWidget_3">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>251</width>
+          <height>52</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>50</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>50</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">image: url(:/images/icons/Wells-Staple-Wire.jpg);
+border: 1px solid #000000;</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="scaledContents">
+            <bool>false</bool>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFrame" name="frame">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>50</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: #D9DFCE;
+border-radius: 12px;</string>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <widget class="QLabel" name="label_2">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>10</y>
+              <width>171</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>Georgia</family>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Examination Materials</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </widget>
+         </item>
+        </layout>
+       </widget>
       </widget>
      </widget>
     </widget>
@@ -8519,7 +8261,7 @@ border-radius: 10px</string>
      </widget>
     </widget>
     <widget class="QWidget" name="page14">
-     <widget class="QFrame" name="frame_27">
+     <widget class="QFrame" name="containerTripleArrow4">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -8538,7 +8280,7 @@ border-radius: 55px;</string>
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QLabel" name="label_95">
+      <widget class="QLabel" name="tripleArrowText4">
        <property name="geometry">
         <rect>
          <x>-10</x>
@@ -8568,7 +8310,7 @@ color: #ffffff;</string>
        </property>
       </widget>
      </widget>
-     <widget class="QFrame" name="frame_28">
+     <widget class="QFrame" name="containerBack4">
       <property name="geometry">
        <rect>
         <x>90</x>
@@ -8587,7 +8329,7 @@ border-radius: 20px;</string>
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QLabel" name="label_96">
+      <widget class="QLabel" name="backText4">
        <property name="geometry">
         <rect>
          <x>50</x>
@@ -8615,7 +8357,7 @@ color: #fefffa;</string>
         <set>Qt::AlignCenter</set>
        </property>
       </widget>
-      <widget class="QLabel" name="label_97">
+      <widget class="QLabel" name="arrowOval4">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -8660,7 +8402,7 @@ color: #fefffa;</string>
        </rect>
       </property>
      </widget>
-     <widget class="QFrame" name="frame_29">
+     <widget class="QFrame" name="greenLeftFrame4">
       <property name="geometry">
        <rect>
         <x>-1</x>
@@ -8679,7 +8421,7 @@ color: #fefffa;</string>
        <enum>QFrame::Raised</enum>
       </property>
      </widget>
-     <widget class="QLabel" name="label_98">
+     <widget class="QLabel" name="viewText4">
       <property name="geometry">
        <rect>
         <x>280</x>
@@ -8707,7 +8449,7 @@ color: #000000;</string>
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QFrame" name="frame_30">
+     <widget class="QFrame" name="containerDone4">
       <property name="geometry">
        <rect>
         <x>560</x>
@@ -8726,7 +8468,7 @@ border-radius: 20px;</string>
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QLabel" name="label_99">
+      <widget class="QLabel" name="doneText4">
        <property name="geometry">
         <rect>
          <x>40</x>
@@ -8755,7 +8497,7 @@ color: #fefffa;</string>
        </property>
       </widget>
      </widget>
-     <widget class="QFrame" name="frame_31">
+     <widget class="QFrame" name="containerVerified4">
       <property name="geometry">
        <rect>
         <x>260</x>
@@ -8774,7 +8516,7 @@ border-radius: 15px;</string>
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QLabel" name="label_100">
+      <widget class="QLabel" name="verifiedText4">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -8801,18 +8543,18 @@ border-radius: 15px;</string>
       </widget>
      </widget>
      <zorder>tableView_12</zorder>
-     <zorder>frame_31</zorder>
-     <zorder>frame_28</zorder>
-     <zorder>frame_30</zorder>
-     <zorder>frame_29</zorder>
-     <zorder>label_98</zorder>
-     <zorder>frame_27</zorder>
+     <zorder>containerVerified4</zorder>
+     <zorder>containerBack4</zorder>
+     <zorder>containerDone4</zorder>
+     <zorder>greenLeftFrame4</zorder>
+     <zorder>viewText4</zorder>
+     <zorder>containerTripleArrow4</zorder>
     </widget>
    </widget>
   </widget>
  </widget>
  <resources>
-  <include location="resources.qrc"/>
+  <include location="source_image.qrc"/>
  </resources>
  <connections/>
 </ui>
