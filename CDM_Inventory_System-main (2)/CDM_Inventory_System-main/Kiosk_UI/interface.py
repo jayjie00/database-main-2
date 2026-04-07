@@ -6,16 +6,21 @@ import traceback
 # Ensure the database folder is accessible
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from PyQt6.QtWidgets import (QApplication, QWidget, QVBoxLayout, QHBoxLayout, QPushButton, QLabel, 
+from PyQt6.QtWidgets import (QApplication, QWidget, QVBoxLayout, QHBoxLayout, QPushButton, QLabel, #type:ignore
                              QStackedWidget, QFrame, QGridLayout, QScrollArea, QTableWidget, 
-                             QTableWidgetItem, QHeaderView, QLineEdit, QMessageBox, QComboBox)
-from PyQt6.QtGui import QFont, QPixmap, QColor
-from PyQt6.QtCore import Qt, QTimer
-from database.db_manager import get_all_items, add_request
+                             QTableWidgetItem, QHeaderView, QLineEdit, QMessageBox, QComboBox) 
+from PyQt6.QtGui import QFont, QPixmap, QColor #type:ignore
+from PyQt6.QtCore import Qt, QTimer #type:ignore
+from database.db_manager import get_all_items, add_request #type:ignore
+import imgConv
+from PyQt6 import uic #type:ignore -- Michelle UI
 
 class StudentKiosk(QWidget):
     def __init__(self):
         super().__init__()
+
+        uic("KioskProject.ui", self)
+        
         self.setWindowTitle("CDM Kiosk")
         self.setFixedSize(1024, 600)
         self.setStyleSheet("background-color: white; color: black;")
@@ -31,7 +36,8 @@ class StudentKiosk(QWidget):
         self.pages = QStackedWidget()
         
         # Adding all pages in correct index order
-        self.pages.addWidget(self.create_welcome_screen())      # 0
+        # self.pages.addWidget(self.create_welcome_screen())      # 0
+        self.setup_welcome_screen()
         self.pages.addWidget(self.create_category_screen())     # 1
         self.pages.addWidget(self.create_selection_screen())    # 2
         self.pages.addWidget(self.create_ris_form_page())       # 3
@@ -39,6 +45,12 @@ class StudentKiosk(QWidget):
         self.pages.addWidget(self.create_printing_sub_screen()) # 5
 
         self.main_layout.addWidget(self.pages)
+       
+    def setup_welcome_screen(self):
+        self.btnPage1.clicked.connect(lambda: self.pages.setCurrentIndex(1))
+
+    # def go_to_categories(self, event):
+        self.pages.setCurrentIndex(1)
 
     def create_top_bar(self, title_text, back_to_index):
         bar = QFrame(); bar.setFixedHeight(80); bar.setStyleSheet("background-color: #1B4D2E;")
@@ -64,11 +76,121 @@ class StudentKiosk(QWidget):
             self.pages.setCurrentIndex(2)
 
     def create_welcome_screen(self):
-        page = QFrame(); page.setStyleSheet("background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #1B4D2E, stop:0.4 #1B4D2E, stop:0.41 white, stop:1 white);")
-        lay = QVBoxLayout(page); btn = QPushButton("TOUCH TO\nSTART "); btn.setFixedSize(400, 200)
-        btn.setStyleSheet("background-color: #E0E4D9; color: #1B4D2E; border-radius: 25px; font-size: 32px; font-weight: bold;")
-        btn.clicked.connect(lambda: self.pages.setCurrentIndex(1))
-        lay.addStretch(); lay.addWidget(btn, alignment=Qt.AlignmentFlag.AlignCenter); lay.addStretch()
+        from PyQt6.QtWidgets import QWidget, QHBoxLayout, QVBoxLayout, QLabel, QPushButton
+        from PyQt6.QtGui import QFont, QPixmap, QColor, QPainter, QPainterPath
+        from PyQt6.QtCore import Qt, QSize
+ 
+        page = QWidget()
+        page.setStyleSheet("background-color: white;")
+ 
+        root = QHBoxLayout(page)
+        root.setContentsMargins(0, 0, 0, 0)
+        root.setSpacing(0)
+ 
+        # ── LEFT PANEL (dark green) ────────────────────────────────────────────
+        left = QWidget()
+        left.setFixedWidth(321)
+        left.setStyleSheet("background-color: rgb(19, 78, 26);")
+        left_lay = QVBoxLayout(left)
+        left_lay.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        left_lay.setContentsMargins(20, 20, 20, 20)
+ 
+        # CDM Logo — loads from the same path the .ui file references
+        logo_lbl = QLabel()
+        logo_lbl.setFixedSize(261, 261)
+        logo_lbl.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        logo_lbl.setStyleSheet("background: transparent;")
+ 
+        import os, sys
+        # Try common relative paths so it works wherever the project is placed
+        logo_candidates = [
+            "icons/cdm_logo_transparent.png",
+            "images/icons/cdm_logo_transparent.png",
+            "source_image/cdm_logo_transparent.png",
+            os.path.join(os.path.dirname(os.path.abspath(__file__)), "icons", "cdm_logo_transparent.png"),
+        ]
+        for path in logo_candidates:
+            if os.path.exists(path):
+                pix = QPixmap(path).scaled(
+                    261, 261,
+                    Qt.AspectRatioMode.KeepAspectRatio,
+                    Qt.TransformationMode.SmoothTransformation,
+                )
+                logo_lbl.setPixmap(pix)
+                break
+        else:
+            # Fallback: show school name in text if image not found
+            logo_lbl.setText("CDM")
+            logo_lbl.setStyleSheet(
+                "color: white; font-size: 48px; font-weight: bold; background: transparent;"
+            )
+ 
+        left_lay.addStretch()
+        left_lay.addWidget(logo_lbl, alignment=Qt.AlignmentFlag.AlignCenter)
+        left_lay.addStretch()
+ 
+        # ── RIGHT PANEL (off-white) ────────────────────────────────────────────
+        right = QWidget()
+        right.setStyleSheet("background-color: rgb(254, 255, 250);")
+        right_lay = QVBoxLayout(right)
+        right_lay.setContentsMargins(0, 0, 0, 0)
+        right_lay.setSpacing(0)
+ 
+        # Spacer above the banner
+        right_lay.addStretch(6)
+ 
+        # Coloured banner strip (matches colorBehindTexts in the .ui)
+        banner = QWidget()
+        banner.setFixedHeight(141)
+        banner.setStyleSheet("background-color: #D9DFCE;")
+        banner_lay = QHBoxLayout(banner)
+        banner_lay.setContentsMargins(30, 0, 20, 0)
+        banner_lay.setSpacing(0)
+ 
+        # Text block
+        text_block = QVBoxLayout()
+        text_block.setSpacing(0)
+ 
+        touch_lbl = QLabel("TOUCH TO")
+        touch_lbl.setFont(QFont("Georgia", 22))
+        touch_lbl.setStyleSheet("color: rgb(87, 117, 80); background: transparent;")
+ 
+        start_lbl = QLabel("START")
+        start_lbl.setFont(QFont("Arial Black", 38, QFont.Weight.Bold))
+        start_lbl.setStyleSheet("color: rgb(19, 78, 26); background: transparent;")
+ 
+        text_block.addWidget(touch_lbl)
+        text_block.addWidget(start_lbl)
+ 
+        # Arrow circle (>>>)
+        arrow_lbl = QLabel(">>>")
+        arrow_lbl.setFixedSize(71, 71)
+        arrow_lbl.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        arrow_lbl.setFont(QFont("OCR A Extended", 18, QFont.Weight.Bold))
+        arrow_lbl.setStyleSheet(
+            "color: white; background-color: rgb(87,117,80);"
+            "border-radius: 35px;"
+        )
+ 
+        banner_lay.addLayout(text_block)
+        banner_lay.addStretch()
+        banner_lay.addWidget(arrow_lbl, alignment=Qt.AlignmentFlag.AlignVCenter)
+        banner_lay.addSpacing(10)
+ 
+        right_lay.addWidget(banner)
+        right_lay.addStretch(1)
+ 
+        # Invisible full-panel click button (sits on top, see z-order trick below)
+        click_btn = QPushButton(right)
+        click_btn.setGeometry(0, 0, 460, 571)      # covers the whole right panel
+        click_btn.setStyleSheet("background: transparent; border: none;")
+        click_btn.raise_()
+        click_btn.clicked.connect(lambda: self.pages.setCurrentIndex(1))
+ 
+        # ── Assemble ──────────────────────────────────────────────────────────
+        root.addWidget(left)
+        root.addWidget(right)
+ 
         return page
 
     def create_category_screen(self):
