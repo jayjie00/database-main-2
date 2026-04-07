@@ -1,0 +1,48 @@
+<RCC>
+  <qresource prefix="images">
+    <file>icons/equalizer.jpg</file>
+    <file>icons/Active PA Speaker.jpg</file>
+    <file>icons/AudioProcessor.png</file>
+    <file>icons/avr.png</file>
+    <file>icons/diBox.jpg</file>
+    <file>icons/microphoneStand.jpg</file>
+    <file>icons/SpeakerSubwoofer.png</file>
+    <file>icons/trsCables.png</file>
+    <file>icons/wiredMicrophone.png</file>
+    <file>icons/xlrCables.jpg</file>
+    <file>icons/microphone.png</file>
+    <file>icons/alcohol.png</file>
+    <file>icons/broom.png</file>
+    <file>icons/adapter.jpg</file>
+    <file>icons/Artline500A-Whiteboard-Marker-_black_white_blue.jpg</file>
+    <file>icons/ballpens_panda.png</file>
+    <file>icons/batteries.png</file>
+    <file>icons/BondPaper.png</file>
+    <file>icons/extension cord.png</file>
+    <file>icons/Folders.jpg</file>
+    <file>icons/highlighterStabilo.png</file>
+    <file>icons/maskingTape.png</file>
+    <file>icons/mechanicalPencils.jpg</file>
+    <file>icons/paperClips.jpg</file>
+    <file>icons/pencils.jpg</file>
+    <file>icons/PermanentMarkers.png</file>
+    <file>icons/Projector-Vero HL6810ATV-03.png</file>
+    <file>icons/scientificCalculator.jpg</file>
+    <file>icons/scissors.jpg</file>
+    <file>icons/scotchTape.png</file>
+    <file>icons/stapler.png</file>
+    <file>icons/usb.jpg</file>
+    <file>icons/Wells-Staple-Wire.jpg</file>
+    <file>icons/WhiteboardInk.jpg</file>
+    <file>icons/arrow-arrow-removebg-preview.png</file>
+    <file>icons/cdm_logo_transparent.png</file>
+    <file>icons/icon_5dots.png</file>
+    <file>icons/icon_cable.png</file>
+    <file>icons/icon_highlighter.png</file>
+    <file>icons/icon_microphone.png</file>
+    <file>icons/icon_printer.png</file>
+    <file>icons/Logo-shadow.png</file>
+    <file>icons/ovalArrow.png</file>
+    <file>icons/rect-lightGreen.png</file>
+  </qresource>
+</RCC>
