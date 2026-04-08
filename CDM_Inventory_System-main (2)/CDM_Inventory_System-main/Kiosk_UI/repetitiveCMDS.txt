@@ -1,0 +1,4 @@
+pyuic6 KioskProject.ui -o ui_kiosk.py
+py interface.py
+cls
+pyrcc5 filename.qrc -o filenameNew.py
