@@ -6,7 +6,7 @@ import traceback
 # Ensure the database folder is accessible
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from PyQt6.QtWidgets import (QApplication, QWidget, QVBoxLayout, QHBoxLayout, QPushButton, QLabel, #type:ignore
+from PyQt6.QtWidgets import (QApplication, QMainWindow, QVBoxLayout, QHBoxLayout, QPushButton, QLabel, #type:ignore
                              QStackedWidget, QFrame, QGridLayout, QScrollArea, QTableWidget, 
                              QTableWidgetItem, QHeaderView, QLineEdit, QMessageBox, QComboBox) 
 from PyQt6.QtGui import QFont, QPixmap, QColor #type:ignore
@@ -15,7 +15,7 @@ from database.db_manager import get_all_items, add_request #type:ignore
 import imgConv
 from PyQt6 import uic #type:ignore -- Michelle UI
 
-class StudentKiosk(QWidget):
+class StudentKiosk(QMainWindow):
     def __init__(self):
         super().__init__()
 
@@ -32,26 +32,14 @@ class StudentKiosk(QWidget):
 
         self.setup_ui()
         self.connect_signals()
+        self.pages.setCurrentIndex(0)
 
         
     def setup_ui(self): # -- ADDED
         # IMPORTANT: names must match Qt Designer objectName
 
         self.pages = self.findChild(QStackedWidget, "pages")
-
         self.btnPage1 = self.findChild(QPushButton, "btnPage1")
-
-        self.cart_list = self.findChild(QVBoxLayout, "cart_list")
-        self.grid_layout = self.findChild(QGridLayout, "grid_layout")
-
-        self.ris_table = self.findChild(QTableWidget, "ris_table")
-
-        self.print_ris_btn = self.findChild(QPushButton, "print_ris_btn")
-
-        self.paper_size_in = self.findChild(QComboBox, "paper_size_in")
-        self.print_qty_in = self.findChild(QLineEdit, "print_qty_in")
-        self.print_item_label = self.findChild(QLabel, "print_item_label")
-
 
     def connect_signals(self):
         self.btnPage1.clicked.connect(
