@@ -19,7 +19,7 @@ class StudentKiosk(QWidget):
     def __init__(self):
         super().__init__()
 
-        uic("KioskProject.ui", self)
+        uic.loadUi("KioskProject.ui", self)
         
         self.setWindowTitle("CDM Kiosk")
         self.setFixedSize(1024, 600)
@@ -36,8 +36,7 @@ class StudentKiosk(QWidget):
         self.pages = QStackedWidget()
         
         # Adding all pages in correct index order
-        # self.pages.addWidget(self.create_welcome_screen())      # 0
-        self.setup_welcome_screen()
+        self.pages.addWidget(self.create_welcome_screen())      # 0
         self.pages.addWidget(self.create_category_screen())     # 1
         self.pages.addWidget(self.create_selection_screen())    # 2
         self.pages.addWidget(self.create_ris_form_page())       # 3
@@ -45,27 +44,42 @@ class StudentKiosk(QWidget):
         self.pages.addWidget(self.create_printing_sub_screen()) # 5
 
         self.main_layout.addWidget(self.pages)
-       
-    def setup_welcome_screen(self):
-        self.btnPage1.clicked.connect(lambda: self.pages.setCurrentIndex(1))
-
-    # def go_to_categories(self, event):
-        self.pages.setCurrentIndex(1)
 
     def create_top_bar(self, title_text, back_to_index):
-        bar = QFrame(); bar.setFixedHeight(80); bar.setStyleSheet("background-color: #1B4D2E;")
+        bar = QFrame(); 
+        bar.setFixedHeight(80); 
+        bar.setStyleSheet("background-color: #1B4D2E;")
+
         layout = QHBoxLayout(bar)
+
         back_btn = QPushButton("BACK")
         back_btn.setFixedSize(100, 40)
-        back_btn.setStyleSheet("color: white; border: 1px solid white; font-weight: bold; border-radius: 10px;")
+        back_btn.setStyleSheet("""
+            color: white;
+            border: 1px solid white;
+            font-weight: bold;
+            border-radius: 10px;
+        """)
         
         if title_text == "REQUISITION & ISSUANCE SLIP":
             back_btn.clicked.connect(self.handle_back_from_ris)
         else:
-            back_btn.clicked.connect(lambda: self.pages.setCurrentIndex(back_to_index))
+            back_btn.clicked.connect(
+                lambda: self.pages.setCurrentIndex(back_to_index)
+            )
             
-        title = QLabel(title_text); title.setFont(QFont("Arial", 22, QFont.Weight.Bold)); title.setStyleSheet("color: white; border: none;")
-        layout.addWidget(back_btn); layout.addStretch(); layout.addWidget(title); layout.addStretch(); layout.addSpacing(100)
+        title = QLabel(title_text)
+        title.setFont(QFont("Arial", 22, QFont.Weight.Bold))
+        title.setStyleSheet("""
+            color: white;
+            border: none;
+        """)
+        
+        layout.addWidget(back_btn)
+        layout.addStretch()
+        layout.addWidget(title)
+        layout.addStretch()
+        layout.addSpacing(100)
         return bar
 
     def handle_back_from_ris(self):
@@ -76,173 +90,222 @@ class StudentKiosk(QWidget):
             self.pages.setCurrentIndex(2)
 
     def create_welcome_screen(self):
-        from PyQt6.QtWidgets import QWidget, QHBoxLayout, QVBoxLayout, QLabel, QPushButton
-        from PyQt6.QtGui import QFont, QPixmap, QColor, QPainter, QPainterPath
-        from PyQt6.QtCore import Qt, QSize
- 
-        page = QWidget()
-        page.setStyleSheet("background-color: white;")
- 
-        root = QHBoxLayout(page)
-        root.setContentsMargins(0, 0, 0, 0)
-        root.setSpacing(0)
- 
-        # ── LEFT PANEL (dark green) ────────────────────────────────────────────
-        left = QWidget()
-        left.setFixedWidth(321)
-        left.setStyleSheet("background-color: rgb(19, 78, 26);")
-        left_lay = QVBoxLayout(left)
-        left_lay.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        left_lay.setContentsMargins(20, 20, 20, 20)
- 
-        # CDM Logo — loads from the same path the .ui file references
-        logo_lbl = QLabel()
-        logo_lbl.setFixedSize(261, 261)
-        logo_lbl.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        logo_lbl.setStyleSheet("background: transparent;")
- 
-        import os, sys
-        # Try common relative paths so it works wherever the project is placed
-        logo_candidates = [
-            "icons/cdm_logo_transparent.png",
-            "images/icons/cdm_logo_transparent.png",
-            "source_image/cdm_logo_transparent.png",
-            os.path.join(os.path.dirname(os.path.abspath(__file__)), "icons", "cdm_logo_transparent.png"),
-        ]
-        for path in logo_candidates:
-            if os.path.exists(path):
-                pix = QPixmap(path).scaled(
-                    261, 261,
-                    Qt.AspectRatioMode.KeepAspectRatio,
-                    Qt.TransformationMode.SmoothTransformation,
-                )
-                logo_lbl.setPixmap(pix)
-                break
-        else:
-            # Fallback: show school name in text if image not found
-            logo_lbl.setText("CDM")
-            logo_lbl.setStyleSheet(
-                "color: white; font-size: 48px; font-weight: bold; background: transparent;"
-            )
- 
-        left_lay.addStretch()
-        left_lay.addWidget(logo_lbl, alignment=Qt.AlignmentFlag.AlignCenter)
-        left_lay.addStretch()
- 
-        # ── RIGHT PANEL (off-white) ────────────────────────────────────────────
-        right = QWidget()
-        right.setStyleSheet("background-color: rgb(254, 255, 250);")
-        right_lay = QVBoxLayout(right)
-        right_lay.setContentsMargins(0, 0, 0, 0)
-        right_lay.setSpacing(0)
- 
-        # Spacer above the banner
-        right_lay.addStretch(6)
- 
-        # Coloured banner strip (matches colorBehindTexts in the .ui)
-        banner = QWidget()
-        banner.setFixedHeight(141)
-        banner.setStyleSheet("background-color: #D9DFCE;")
-        banner_lay = QHBoxLayout(banner)
-        banner_lay.setContentsMargins(30, 0, 20, 0)
-        banner_lay.setSpacing(0)
- 
-        # Text block
-        text_block = QVBoxLayout()
-        text_block.setSpacing(0)
- 
-        touch_lbl = QLabel("TOUCH TO")
-        touch_lbl.setFont(QFont("Georgia", 22))
-        touch_lbl.setStyleSheet("color: rgb(87, 117, 80); background: transparent;")
- 
-        start_lbl = QLabel("START")
-        start_lbl.setFont(QFont("Arial Black", 38, QFont.Weight.Bold))
-        start_lbl.setStyleSheet("color: rgb(19, 78, 26); background: transparent;")
- 
-        text_block.addWidget(touch_lbl)
-        text_block.addWidget(start_lbl)
- 
-        # Arrow circle (>>>)
-        arrow_lbl = QLabel(">>>")
-        arrow_lbl.setFixedSize(71, 71)
-        arrow_lbl.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        arrow_lbl.setFont(QFont("OCR A Extended", 18, QFont.Weight.Bold))
-        arrow_lbl.setStyleSheet(
-            "color: white; background-color: rgb(87,117,80);"
-            "border-radius: 35px;"
+        page = QFrame()
+        page.setStyleSheet("background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #1B4D2E, stop:0.4 #1B4D2E, stop:0.41 white, stop:1 white);")
+
+        lay = QVBoxLayout(page)
+
+        btn = QPushButton("TOUCH TO\nSTART ")
+        btn.setFixedSize(400, 200)
+        btn.setStyleSheet("""
+            background-color: #E0E4D9;
+            color: #1B4D2E;
+            border-radius: 25px;
+            font-size: 32px;
+            font-weight: bold;
+        """)
+        btn.clicked.connect(
+            lambda: self.pages.setCurrentIndex(1)
         )
- 
-        banner_lay.addLayout(text_block)
-        banner_lay.addStretch()
-        banner_lay.addWidget(arrow_lbl, alignment=Qt.AlignmentFlag.AlignVCenter)
-        banner_lay.addSpacing(10)
- 
-        right_lay.addWidget(banner)
-        right_lay.addStretch(1)
- 
-        # Invisible full-panel click button (sits on top, see z-order trick below)
-        click_btn = QPushButton(right)
-        click_btn.setGeometry(0, 0, 460, 571)      # covers the whole right panel
-        click_btn.setStyleSheet("background: transparent; border: none;")
-        click_btn.raise_()
-        click_btn.clicked.connect(lambda: self.pages.setCurrentIndex(1))
- 
-        # ── Assemble ──────────────────────────────────────────────────────────
-        root.addWidget(left)
-        root.addWidget(right)
- 
+        lay.addStretch()
+        lay.addWidget(btn, alignment=Qt.AlignmentFlag.AlignCenter)
+        lay.addStretch()
         return page
 
     def create_category_screen(self):
-        page = QWidget(); lay = QVBoxLayout(page); lay.setContentsMargins(0, 0, 0, 0)
+        page = QWidget()
+        lay = QVBoxLayout(page)
+        lay.setContentsMargins(0, 0, 0, 0)
         lay.addWidget(self.create_top_bar("REQUEST CATEGORIES", 0))
-        content = QWidget(); content_lay = QVBoxLayout(content); content_lay.addStretch(1)
-        row = QHBoxLayout(); row.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        content = QWidget()
+        content_lay = QVBoxLayout(content)
+        content_lay.addStretch(1)
+        row = QHBoxLayout()
+        row.setAlignment(Qt.AlignmentFlag.AlignCenter)
         cats = [("Equipment\nBorrowing", "Equipment"), ("Sound System\nSetup", "Sound"), ("Office/School\nSupplies", "Supplies"), ("Mass\nPrinting", "Printing")]
+        
         for display, code in cats:
-            container = QWidget(); v = QVBoxLayout(container); btn = QPushButton(); btn.setFixedSize(170, 170)
-            btn.setStyleSheet("background-color: #4B8B3B; border-radius: 85px; border: 5px solid #E0E4D9;")
+            container = QWidget(); v = QVBoxLayout(container)
+            btn = QPushButton(); btn.setFixedSize(170, 170)
+            btn.setStyleSheet("""
+                background-color: #4B8B3B; 
+                border-radius: 85px;
+                border: 5px solid #E0E4D9;
+            """)
             btn.clicked.connect(lambda ch, c=code: self.show_filtered(c))
-            lbl = QLabel(display); lbl.setAlignment(Qt.AlignmentFlag.AlignCenter); lbl.setStyleSheet("color: black; font-weight: bold; font-size: 13px;")
-            v.addWidget(btn); v.addWidget(lbl); row.addWidget(container)
-        content_lay.addLayout(row); content_lay.addStretch(1); lay.addWidget(content)
+
+            lbl = QLabel(display)
+            lbl.setAlignment(Qt.AlignmentFlag.AlignCenter)
+            lbl.setStyleSheet("""
+                color: black; 
+                font-weight: bold; 
+                font-size: 13px;
+            """)
+            v.addWidget(btn)
+            v.addWidget(lbl)
+            row.addWidget(container)
+
+        content_lay.addLayout(row)
+        content_lay.addStretch(1)
+        lay.addWidget(content)
+
         return page
 
     def create_selection_screen(self):
-        page = QWidget(); lay = QVBoxLayout(page); lay.setContentsMargins(0, 0, 0, 0)
+        page = QWidget()
+        lay = QVBoxLayout(page)
+        lay.setContentsMargins(0, 0, 0, 0)
         lay.addWidget(self.create_top_bar("SELECT ITEMS", 1))
+
         main_content = QHBoxLayout()
-        self.cart_area = QFrame(); self.cart_area.setFixedWidth(320); self.cart_area.setStyleSheet("background-color: #F4F6F1; border-right: 2px solid #DDD;")
-        cart_lay = QVBoxLayout(self.cart_area); h = QHBoxLayout(); t = QLabel("SELECTED ITEMS"); t.setStyleSheet("color: black; font-weight: bold; font-size: 16px;")
-        r = QPushButton("RESET"); r.setStyleSheet("color: #A32A2A; font-weight: bold; border: none;"); r.clicked.connect(self.reset_cart); h.addWidget(t); h.addStretch(); h.addWidget(r); cart_lay.addLayout(h)
-        self.cart_list = QVBoxLayout(); self.cart_list.setAlignment(Qt.AlignmentFlag.AlignTop); scroll_c = QScrollArea(); sc_w = QWidget(); sc_w.setLayout(self.cart_list); scroll_c.setWidget(sc_w); scroll_c.setWidgetResizable(True); scroll_c.setStyleSheet("background: transparent; border: none;"); cart_lay.addWidget(scroll_c)
-        proc = QPushButton("PROCEED TO CHECKOUT"); proc.setStyleSheet("background-color: #1B4D2E; color: white; padding: 15px; font-weight: bold; border-radius: 10px;"); proc.clicked.connect(self.proceed_to_ris)
+
+        self.cart_area = QFrame()
+        self.cart_area.setFixedWidth(320)
+        self.cart_area.setStyleSheet("background-color: #F4F6F1; border-right: 2px solid #DDD;")
+
+        cart_lay = QVBoxLayout(self.cart_area)
+        h = QHBoxLayout()
+        t = QLabel("SELECTED ITEMS")
+        t.setStyleSheet("color: black; font-weight: bold; font-size: 16px;")
+
+        r = QPushButton("RESET")
+        r.setStyleSheet("color: #A32A2A; font-weight: bold; border: none;")
+        r.clicked.connect(self.reset_cart)
+        h.addWidget(t)
+        h.addStretch()
+        h.addWidget(r)
+
+        cart_lay.addLayout(h)
+        self.cart_list = QVBoxLayout()
+        self.cart_list.setAlignment(Qt.AlignmentFlag.AlignTop)
+        scroll_c = QScrollArea()
+
+        sc_w = QWidget()
+        sc_w.setLayout(self.cart_list)
+
+        scroll_c.setWidget(sc_w)
+        scroll_c.setWidgetResizable(True)
+        scroll_c.setStyleSheet("""
+            background: transparent; 
+            border: none;
+        """)
+        cart_lay.addWidget(scroll_c)
+
+        proc = QPushButton("PROCEED TO CHECKOUT")
+        proc.setStyleSheet("""
+            background-color: #1B4D2E; 
+            color: white; 
+            padding: 15px; 
+            font-weight: bold; 
+            border-radius: 10px;
+        """)
+        proc.clicked.connect(self.proceed_to_ris)
         cart_lay.addWidget(proc)
-        scroll_g = QScrollArea(); scroll_g.setWidgetResizable(True); self.grid_widget = QWidget(); self.grid_layout = QGridLayout(self.grid_widget); scroll_g.setWidget(self.grid_widget); main_content.addWidget(self.cart_area); main_content.addWidget(scroll_g); lay.addLayout(main_content)
+
+        scroll_g = QScrollArea()
+        scroll_g.setWidgetResizable(True)
+
+        self.grid_widget = QWidget()
+        self.grid_layout = QGridLayout(self.grid_widget)
+
+        scroll_g.setWidget(self.grid_widget)
+
+        main_content.addWidget(self.cart_area)
+        main_content.addWidget(scroll_g)
+
+        lay.addLayout(main_content)
         return page
 
     def create_ris_form_page(self):
-        page = QWidget(); page.setStyleSheet("background-color: white; color: black;"); layout = QVBoxLayout(page); layout.setContentsMargins(0, 0, 0, 0); layout.addWidget(self.create_top_bar("REQUISITION & ISSUANCE SLIP", 2))
-        scroll = QScrollArea(); scroll.setWidgetResizable(True); scroll.setStyleSheet("border: none;"); container = QWidget(); container.setStyleSheet("background-color: white;"); c_lay = QVBoxLayout(container); c_lay.setContentsMargins(20, 10, 20, 20)
-        lbl_s = "background-color: #1B4D2E; color: white; padding: 4px; font-weight: bold; font-size: 11px;"; in_s = "background-color: #E0E4D9; color: black; border-radius: 12px; padding: 5px; border: 1px solid #1B4D2E;"
+        page = QWidget()
+        page.setStyleSheet("background-color: white; color: black;")
+
+        layout = QVBoxLayout(page)
+        layout.setContentsMargins(0, 0, 0, 0)
+        layout.addWidget(self.create_top_bar("REQUISITION & ISSUANCE SLIP", 2))
+
+        scroll = QScrollArea()
+        scroll.setWidgetResizable(True)
+        scroll.setStyleSheet("border: none;")
+
+        container = QWidget(); container.setStyleSheet("background-color: white;")
+
+        c_lay = QVBoxLayout(container)
+        c_lay.setContentsMargins(20, 10, 20, 20)
+
+        lbl_s = "background-color: #1B4D2E; color: white; padding: 4px; font-weight: bold; font-size: 11px;"
+        in_s = "background-color: #E0E4D9; color: black; border-radius: 12px; padding: 5px; border: 1px solid #1B4D2E;"
+
         top_grid = QGridLayout()
-        self.ris_div = QLineEdit("CDM"); self.ris_resp_center = QLineEdit(); self.ris_office = QLineEdit(); self.ris_code = QLineEdit(); self.ris_date = QLineEdit(datetime.now().strftime("%Y-%m-%d")); self.ris_no = QLineEdit()
+
+        self.ris_div = QLineEdit("CDM")
+        self.ris_resp_center = QLineEdit()
+        self.ris_office = QLineEdit()
+        self.ris_code = QLineEdit()
+        self.ris_date = QLineEdit(datetime.now().strftime("%Y-%m-%d"))
+        self.ris_no = QLineEdit()
         fields = [("DIVISION:", self.ris_div, 0, 0), ("RESPONSIBLE CENTER:", self.ris_resp_center, 0, 2), ("DATE:", self.ris_date, 0, 4), ("OFFICE:", self.ris_office, 1, 0), ("CODE/CL # :", self.ris_code, 1, 2), ("RIS NO:", self.ris_no, 1, 4)]
+
         for txt, w, r, c in fields:
-            l = QLabel(txt); l.setStyleSheet(lbl_s); w.setStyleSheet(in_s); top_grid.addWidget(l, r, c); top_grid.addWidget(w, r, c+1)
-        self.ris_table = QTableWidget(5, 6); self.ris_table.setHorizontalHeaderLabels(["STOCK NO", "UNIT", "DESCRIPTION", "QUANTITY", "QUANTITY", "REMARKS"]); self.ris_table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch); self.ris_table.setStyleSheet("QHeaderView::section { background-color: #1B4D2E; color: white; border: 1px solid white; font-weight: bold; } QTableWidget { gridline-color: #1B4D2E; background-color: white; color: black; }")
-        self.purpose_in = QLineEdit(); self.purpose_in.setStyleSheet(in_s); self.sig_widgets = {}
+            l = QLabel(txt)
+            l.setStyleSheet(lbl_s)
+            w.setStyleSheet(in_s)
+            top_grid.addWidget(l, r, c)
+            top_grid.addWidget(w, r, c+1)
+
+        self.ris_table = QTableWidget(5, 6)
+        self.ris_table.setHorizontalHeaderLabels(["STOCK NO", "UNIT", "DESCRIPTION", "QUANTITY", "QUANTITY", "REMARKS"])
+        self.ris_table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
+        self.ris_table.setStyleSheet("QHeaderView::section { background-color: #1B4D2E; color: white; border: 1px solid white; font-weight: bold; } QTableWidget { gridline-color: #1B4D2E; background-color: white; color: black; }")
+
+        self.purpose_in = QLineEdit()
+        self.purpose_in.setStyleSheet(in_s)
+        self.sig_widgets = {}
         sections = ["REQUESTED BY:", "APPROVED BY:", "ISSUED BY:", "RECEIVED BY:"]; row_labels = ["NAME:", "DATE:", "SIGNATURE:"]
+
         bot_grid = QGridLayout()
+
         for i, text in enumerate(sections):
-            lbl = QLabel(text); lbl.setStyleSheet(lbl_s); lbl.setAlignment(Qt.AlignmentFlag.AlignCenter); bot_grid.addWidget(lbl, 0, i+1)
+            lbl = QLabel(text)
+            lbl.setStyleSheet(lbl_s)
+            lbl.setAlignment(Qt.AlignmentFlag.AlignCenter)
+            bot_grid.addWidget(lbl, 0, i+1)
+
         for r, txt in enumerate(row_labels):
             bot_grid.addWidget(QLabel(txt), r+1, 0)
+
             for c in range(4):
-                w = QLineEdit(); w.setStyleSheet(in_s); bot_grid.addWidget(w, r+1, c+1); self.sig_widgets[f"{txt}_{sections[c]}"] = w
-        next_b = QPushButton("NEXT ->"); next_b.setStyleSheet("background-color: #4B6344; color: white; font-weight: bold; padding: 10px 30px; border-radius: 20px;"); next_b.clicked.connect(self.handle_final_submit)
-        c_lay.addLayout(top_grid); c_lay.addSpacing(10); c_lay.addWidget(self.ris_table); c_lay.addSpacing(10); c_lay.addWidget(QLabel("PURPOSE:")); c_lay.addWidget(self.purpose_in); c_lay.addSpacing(10); c_lay.addLayout(bot_grid); c_lay.addSpacing(20); c_lay.addWidget(next_b)
-        scroll.setWidget(container); layout.addWidget(scroll); return page
+                w = QLineEdit()
+                w.setStyleSheet(in_s)
+                bot_grid.addWidget(w, r+1, c+1)
+                self.sig_widgets[f"{txt}_{sections[c]}"] = w
+
+        next_b = QPushButton("NEXT ->")
+        next_b.setStyleSheet("""
+                background-color: #4B6344; 
+                color: white;
+                font-weight: bold;
+                padding: 10px 30px;
+                border-radius: 20px;
+        """)
+
+        next_b.clicked.connect(self.handle_final_submit)
+
+        c_lay.addLayout(top_grid)
+        c_lay.addSpacing(10)
+        c_lay.addWidget(self.ris_table)
+        c_lay.addSpacing(10)
+        c_lay.addWidget(QLabel("PURPOSE:"))
+        c_lay.addWidget(self.purpose_in)
+        c_lay.addSpacing(10)
+        c_lay.addLayout(bot_grid)
+        c_lay.addSpacing(20)
+        c_lay.addWidget(next_b)
+
+        scroll.setWidget(container)
+        layout.addWidget(scroll)
+
+        return page
 
     # --- UPDATED SCREEN 4: WAITING WITH PRINT ---
     def create_waiting_screen(self):
@@ -442,4 +505,7 @@ class StudentKiosk(QWidget):
         self.refresh_grid()
 
 if __name__ == "__main__":
-    app = QApplication(sys.argv); k = StudentKiosk(); k.show(); sys.exit(app.exec())
+    app = QApplication(sys.argv) 
+    k = StudentKiosk() 
+    k.show()
+    sys.exit(app.exec())
