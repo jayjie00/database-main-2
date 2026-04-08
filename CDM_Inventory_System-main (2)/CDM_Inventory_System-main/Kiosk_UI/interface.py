@@ -309,9 +309,26 @@ class StudentKiosk(QWidget):
 
     # --- UPDATED SCREEN 4: WAITING WITH PRINT ---
     def create_waiting_screen(self):
-        page = QFrame(); page.setStyleSheet("background-color: #1B4D2E;"); lay = QVBoxLayout(page)
-        msg = QLabel("WAITING FOR VERIFICATION..."); msg.setStyleSheet("color: white; font-size: 30px; font-weight: bold;"); msg.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        sub = QLabel("Please wait while the PSO Admin reviews your request."); sub.setStyleSheet("color: #E0E4D9; font-size: 18px;"); sub.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        page = QFrame()
+        page.setStyleSheet("background-color: #1B4D2E;")
+
+        lay = QVBoxLayout(page)
+
+        msg = QLabel("WAITING FOR VERIFICATION...")
+        msg.setStyleSheet("""
+            color: white;
+            font-size: 30px; 
+            font-weight: bold;
+        """)
+        msg.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        sub = QLabel("Please wait while the PSO Admin reviews your request.")
+        sub.setStyleSheet("""
+            color: #E0E4D9;
+            font-size: 18px;
+        """)
+
+        sub.setAlignment(Qt.AlignmentFlag.AlignCenter)
         
         # NEW PRINT BUTTON
         self.print_ris_btn = QPushButton("PRINT RIS FORM NOW")
@@ -327,42 +344,149 @@ class StudentKiosk(QWidget):
         """)
         self.print_ris_btn.clicked.connect(self.print_current_ris)
         
-        lay.addStretch(); lay.addWidget(msg); lay.addWidget(sub); lay.addSpacing(30); lay.addWidget(self.print_ris_btn, alignment=Qt.AlignmentFlag.AlignCenter); lay.addStretch(); return page
+        lay.addStretch()
+        lay.addWidget(msg)
+        lay.addWidget(sub)
+        lay.addSpacing(30)
+        lay.addWidget(self.print_ris_btn, alignment=Qt.AlignmentFlag.AlignCenter)
+        lay.addStretch()
+
+        return page
 
     def create_printing_sub_screen(self):
-        page = QWidget(); lay = QVBoxLayout(page); lay.setContentsMargins(0, 0, 0, 0)
+        page = QWidget()
+        lay = QVBoxLayout(page)
+        lay.setContentsMargins(0, 0, 0, 0)
         lay.addWidget(self.create_top_bar("MASS PRINTING SELECTION", 1))
-        content = QHBoxLayout(); content.setContentsMargins(50, 20, 50, 50); content.setSpacing(40) 
-        self.print_left_panel = QFrame(); self.print_left_panel.setStyleSheet("background-color: #F4F6F1; border-radius: 20px; border: 1px solid #1B4D2E;"); self.print_left_panel.setFixedWidth(350)
-        left_lay = QVBoxLayout(self.print_left_panel); left_lay.setContentsMargins(25, 25, 25, 25)
-        title = QLabel("PRINT DETAILS"); title.setStyleSheet("color: black; font-weight: bold; font-size: 22px;")
-        self.print_item_label = QLabel("Select Category ->"); self.print_item_label.setStyleSheet("background-color: #E0E4D9; color: black; border-radius: 10px; padding: 10px; font-weight: bold;")
-        input_style = "background-color: white; color: black; padding: 8px; border: 1px solid #1B4D2E; border-radius: 5px;"
-        self.paper_type_in = QComboBox(); self.paper_type_in.addItems(["Regular (70gsm)", "Premium (80gsm)", "Special Paper", "Glossy"]); self.paper_type_in.setStyleSheet(input_style)
-        self.paper_size_in = QComboBox(); self.paper_size_in.addItems(["A4", "Long", "Short"]); self.paper_size_in.setStyleSheet(input_style)
-        self.print_qty_in = QLineEdit(); self.print_qty_in.setPlaceholderText("Enter pages..."); self.print_qty_in.setStyleSheet(input_style)
-        proc_btn = QPushButton("PROCEED"); proc_btn.setStyleSheet("background-color: #1B4D2E; color: white; font-weight: bold; padding: 15px; border-radius: 25px;")
+
+        content = QHBoxLayout()
+        content.setContentsMargins(50, 20, 50, 50)
+        content.setSpacing(40) 
+        self.print_left_panel = QFrame()
+        self.print_left_panel.setStyleSheet("""
+            background-color: #F4F6F1;
+            border-radius: 20px;
+            border: 1px solid #1B4D2E;
+        """)
+
+        self.print_left_panel.setFixedWidth(350)
+
+        left_lay = QVBoxLayout(self.print_left_panel)
+        left_lay.setContentsMargins(25, 25, 25, 25)
+        title = QLabel("PRINT DETAILS")
+        title.setStyleSheet("""
+            color: black; 
+            font-weight: bold; 
+            font-size: 22px;
+        """)
+
+        self.print_item_label = QLabel("Select Category ->")
+        self.print_item_label.setStyleSheet("""
+            background-color: #E0E4D9; 
+            color: black; 
+            border-radius: 10px; 
+            padding: 10px; 
+            font-weight: bold;
+        """)
+
+        input_style = """
+            background-color: white; 
+            color: black; 
+            padding: 8px; 
+            border: 1px solid #1B4D2E; 
+            border-radius: 5px;
+        """
+
+        self.paper_type_in = QComboBox()
+        self.paper_type_in.addItems(["Regular (70gsm)", "Premium (80gsm)", "Special Paper", "Glossy"])
+        self.paper_type_in.setStyleSheet(input_style)
+        self.paper_size_in = QComboBox()
+        self.paper_size_in.addItems(["A4", "Long", "Short"])
+        self.paper_size_in.setStyleSheet(input_style)
+        self.print_qty_in = QLineEdit()
+        self.print_qty_in.setPlaceholderText("Enter pages...")
+        self.print_qty_in.setStyleSheet(input_style)
+        proc_btn = QPushButton("PROCEED")
+        proc_btn.setStyleSheet("""
+            background-color: #1B4D2E; 
+            color: white; 
+            font-weight: bold; 
+            padding: 15px; 
+            border-radius: 25px;
+        """)
         proc_btn.clicked.connect(self.handle_print_proceed)
-        left_lay.addWidget(title); left_lay.addWidget(self.print_item_label); left_lay.addWidget(QLabel("Paper Type")); left_lay.addWidget(self.paper_type_in); left_lay.addWidget(QLabel("Paper Size")); left_lay.addWidget(self.paper_size_in); left_lay.addWidget(QLabel("Quantity")); left_lay.addWidget(self.print_qty_in); left_lay.addStretch(); left_lay.addWidget(proc_btn)
-        right_lay = QHBoxLayout(); right_lay.setSpacing(30)
+        left_lay.addWidget(title)
+        left_lay.addWidget(self.print_item_label)
+        left_lay.addWidget(QLabel("Paper Type"))
+        left_lay.addWidget(self.paper_type_in)
+        left_lay.addWidget(QLabel("Paper Size"));
+        left_lay.addWidget(self.paper_size_in)
+        left_lay.addWidget(QLabel("Quantity"))
+        left_lay.addWidget(self.print_qty_in)
+        left_lay.addStretch()
+        left_lay.addWidget(proc_btn)
+
+        right_lay = QHBoxLayout()
+        right_lay.setSpacing(30)
+
         print_cats = ["Instructional Materials", "Official Documents", "Examination Materials"]
         self.print_buttons = []
+
         for name in print_cats:
-            box = QPushButton(name.replace(" ", "\n")); box.setFixedSize(180, 200); box.setStyleSheet("background-color: #4B6344; color: white; font-weight: bold; border-radius: 15px;")
+            box = QPushButton(name.replace(" ", "\n"))
+            box.setFixedSize(180, 200)
+            box.setStyleSheet("""
+                background-color: #4B6344; 
+                color: white; 
+                font-weight: bold; 
+                border-radius: 15px;
+            """)
             box.clicked.connect(lambda ch, n=name, b=box: (self.select_print_type(b), self.print_item_label.setText(n)))
-            self.print_buttons.append(box); right_lay.addWidget(box)
-        content.addWidget(self.print_left_panel); content.addLayout(right_lay); lay.addLayout(content); return page
+
+            self.print_buttons.append(box)
+            right_lay.addWidget(box)
+        content.addWidget(self.print_left_panel)
+        content.addLayout(right_lay)
+
+        lay.addLayout(content)
+        return page
 
     def select_print_type(self, clicked_button):
-        for btn in self.print_buttons: btn.setStyleSheet("background-color: #4B6344; color: white; font-weight: bold; border-radius: 15px;")
-        clicked_button.setStyleSheet("background-color: #1B4D2E; color: white; font-weight: bold; border: 3px solid #E0E4D9; border-radius: 15px;")
-        self.print_item_label.setStyleSheet("background-color: #1B4D2E; color: white; border-radius: 10px; padding: 10px; font-weight: bold;")
+        for btn in self.print_buttons: 
+            btn.setStyleSheet("""
+                background-color: #4B6344;
+                color: white;
+                font-weight: bold;
+                border-radius: 15px;
+            """)
+
+        clicked_button.setStyleSheet("""
+            background-color: #1B4D2E;
+            color: white;
+            font-weight: bold;
+            border: 3px solid #E0E4D9;
+            border-radius: 15px;
+        """)
+
+        self.print_item_label.setStyleSheet("""
+            background-color: #1B4D2E; 
+            color: white; 
+            border-radius: 10px; 
+            padding: 10px; 
+            font-weight: bold;
+        """)
 
     def handle_print_proceed(self):
         item_type = self.print_item_label.text()
         qty = self.print_qty_in.text().strip()
-        if item_type == "Select Category ->" or not qty.isdigit(): return
-        self.cart = {f"PRINTING: {item_type} ({self.paper_size_in.currentText()})": int(qty)}
+
+        if item_type == "Select Category ->" or not qty.isdigit(): 
+            return
+
+        self.cart = {
+            f"PRINTING: {item_type} ({self.paper_size_in.currentText()})": int(qty)
+            }
+        
         self.proceed_to_ris()
 
     def show_filtered(self, category_code):
@@ -462,16 +586,28 @@ class StudentKiosk(QWidget):
     def update_cart_display(self):
         for i in reversed(range(self.cart_list.count())): 
             if self.cart_list.itemAt(i).widget(): self.cart_list.itemAt(i).widget().setParent(None)
+
         for name, qty in self.cart.items():
-            row = QLabel(f"{name} x{qty}"); row.setStyleSheet("color: black; font-weight: bold;")
+            row = QLabel(f"{name} x{qty}")
+            row.setStyleSheet("""
+                color: black; 
+                font-weight: bold;
+            """)
+            
             self.cart_list.addWidget(row)
 
     def proceed_to_ris(self):
         self.ris_table.setRowCount(0)
+
         for name, qty in self.cart.items():
-            r = self.ris_table.rowCount(); self.ris_table.insertRow(r)
+            r = self.ris_table.rowCount()
+            self.ris_table.insertRow(r)
+
             for c, v in enumerate(["", "", name, str(qty), "", ""]):
-                it = QTableWidgetItem(v); it.setForeground(QColor("black")); self.ris_table.setItem(r, c, it)
+                it = QTableWidgetItem(v)
+                it.setForeground(QColor("black"))
+                self.ris_table.setItem(r, c, it)
+
         self.pages.setCurrentIndex(3)
 
     def handle_final_submit(self):
@@ -492,11 +628,27 @@ class StudentKiosk(QWidget):
         self.print_ris_btn.setText("RIS PRINTED")
 
     def reset_to_start(self):
-        self.cart = {}; self.temp_stocks = {}; self.ris_table.setRowCount(0); self.ris_table.setRowCount(5)
-        self.ris_resp_center.clear(); self.ris_office.clear(); self.ris_code.clear(); self.ris_no.clear(); self.purpose_in.clear()
-        for widget in self.sig_widgets.values(): widget.clear()
-        self.print_qty_in.clear(); self.print_item_label.setText("Select Category ->"); self.print_ris_btn.setEnabled(True); self.print_ris_btn.setText("PRINT RIS FORM NOW")
-        self.update_cart_display(); self.refresh_grid(); self.pages.setCurrentIndex(0)
+        self.cart = {}
+        self.temp_stocks = {}
+        self.ris_table.setRowCount(0)
+        self.ris_table.setRowCount(5)
+        self.ris_resp_center.clear()
+        self.ris_office.clear()
+        self.ris_code.clear()
+        self.ris_no.clear()
+        self.purpose_in.clear()
+
+        for widget in self.sig_widgets.values(): 
+            widget.clear()
+            
+        self.print_qty_in.clear()
+        self.print_item_label.setText("Select Category ->")
+        self.print_ris_btn.setEnabled(True)
+        self.print_ris_btn.setText("PRINT RIS FORM NOW")
+
+        self.update_cart_display()
+        self.refresh_grid()
+        self.pages.setCurrentIndex(0)
 
     def reset_cart(self):
         self.cart = {}
