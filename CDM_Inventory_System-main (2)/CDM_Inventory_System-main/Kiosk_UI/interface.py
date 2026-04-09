@@ -5,21 +5,27 @@ import traceback
 
 # Ensure the database folder is accessible
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
+import imgConv
+from PyQt6.QtCore import QFile, Qt, QTimer
 from PyQt6.QtWidgets import (QApplication, QMainWindow, QVBoxLayout, QHBoxLayout, QPushButton, QLabel, #type:ignore
                              QStackedWidget, QFrame, QGridLayout, QScrollArea, QTableWidget, 
                              QTableWidgetItem, QHeaderView, QLineEdit, QMessageBox, QComboBox) 
 from PyQt6.QtGui import QFont, QPixmap, QColor #type:ignore
-from PyQt6.QtCore import Qt, QTimer #type:ignore
-from database.db_manager import get_all_items, add_request #type:ignore
-import imgConv
-from PyQt6 import uic #type:ignore -- Michelle UI
 
-class StudentKiosk(QMainWindow):
+from database.db_manager import get_all_items, add_request #type:ignore
+from uiDesign import Ui_QMainWindow
+
+class StudentKiosk(QMainWindow, Ui_QMainWindow):
     def __init__(self):
         super().__init__()
 
-        uic.loadUi("KioskProject.ui", self)
+        print("Logo found:", QFile.exists(":/images/icons/cdm_logo_transparent.png"))
+        print("Oval arrow:", QFile.exists(":/images/icons/ovalArrow.png"))
+        print("Arrow found:", QFile.exists(":/icons/ovalArrow.png"))
+
+        # uic.loadUi("KioskProject.ui", self)
+
+        self.setupUi(self)
         
         self.setWindowTitle("CDM Kiosk")
         self.setFixedSize(1024, 600)
@@ -30,30 +36,18 @@ class StudentKiosk(QMainWindow):
         self.current_cat = "Supplies"
         self.print_buttons = [] 
 
-        self.setup_ui()
         self.connect_signals()
         self.pages.setCurrentIndex(0)
 
-        
-    def setup_ui(self): # -- ADDED
-        # IMPORTANT: names must match Qt Designer objectName
+        self.pages
+        self.btnPage1
+        self.pixmap = QPixmap(":/images/icons/cdm_logo_transparent.png")
 
-        self.pages = self.findChild(QStackedWidget, "pages")
-        self.btnPage1 = self.findChild(QPushButton, "btnPage1")
 
     def connect_signals(self):
         self.btnPage1.clicked.connect(
             lambda: self.pages.setCurrentIndex(1)
         )
-
-
-
-
-
-
-
-
-
 
     # def create_top_bar(self, title_text, back_to_index): -- REMOVED  
 
@@ -125,7 +119,7 @@ class StudentKiosk(QMainWindow):
 
     def _set_card_image(self, label, img_path):
         try:
-            if img_path and os.path.exists(img_path):
+            # if img_path and os.path.exists(img_path):
                 pixmap = QPixmap(img_path)
                 if not pixmap.isNull():
                     scaled_pix = pixmap.scaled(
@@ -140,7 +134,7 @@ class StudentKiosk(QMainWindow):
             pass
 
         label.setText("[IMG]")
-        label.setStyleSheet("background-color: #EEE; color: #999; font-size: 40px; border-radius: 5px;")
+        # label.setStyleSheet("background-color: #EEE; color: #999; font-size: 40px; border-radius: 5px;")
 
     def refresh_grid(self): # -- KEEP
         # 1. Clear the current grid
