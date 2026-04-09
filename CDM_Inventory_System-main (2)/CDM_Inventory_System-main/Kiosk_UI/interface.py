@@ -15,15 +15,10 @@ from PyQt6.QtGui import QFont, QPixmap, QColor #type:ignore
 from database.db_manager import get_all_items, add_request #type:ignore
 from uiDesign import Ui_QMainWindow
 
+
 class StudentKiosk(QMainWindow, Ui_QMainWindow):
     def __init__(self):
         super().__init__()
-
-        print("Logo found:", QFile.exists(":/images/icons/cdm_logo_transparent.png"))
-        print("Oval arrow:", QFile.exists(":/images/icons/ovalArrow.png"))
-        print("Arrow found:", QFile.exists(":/icons/ovalArrow.png"))
-
-        # uic.loadUi("KioskProject.ui", self)
 
         self.setupUi(self)
         
@@ -45,10 +40,107 @@ class StudentKiosk(QMainWindow, Ui_QMainWindow):
 
 
     def connect_signals(self):
+
+        #for page1, front user screen
         self.btnPage1.clicked.connect(
             lambda: self.pages.setCurrentIndex(1)
         )
 
+        #for page2, yung categories screen
+        self.cableBtn.clicked.connect(
+            lambda: self.pages.setCurrentIndex(2)
+        )
+        self.microPhoneBtn.clicked.connect(
+            lambda: self.pages.setCurrentIndex(5)
+        )
+        self.highlighterBtn.clicked.connect(
+            lambda: self.pages.setCurrentIndex(8)
+        )
+        self.printerBtn.clicked.connect(
+            lambda: self.pages.setCurrentIndex(11)
+        )
+        
+        #for page3, Equipment Borrowing
+        self.proceedBtn.clicked.connect(
+            lambda: self.pages.setCurrentIndex(3)
+        )
+        self.backBtn3.clicked.connect(
+            lambda: self.pages.setCurrentIndex(1)
+        )
+
+        #for page4, RIS form
+        self.proceedBtn4.clicked.connect(
+            lambda: self.pages.setCurrentIndex(4)
+        )
+        self.backBtn4.clicked.connect(
+            lambda: self.pages.setCurrentIndex(2)
+        )
+        #for page5, verified
+        self.containerBack.mousePressEvent = lambda event: self.pages.setCurrentIndex(3)
+        self.containerDone.mousePressEvent = lambda event: self.pages.setCurrentIndex(0)
+
+
+        #for page6, Sound System Setup
+        self.proceedBtn_2.clicked.connect(
+            lambda: self.pages.setCurrentIndex(6)
+        )
+        self.backBtn6.clicked.connect(
+            lambda: self.pages.setCurrentIndex(1)
+        )
+
+        #for page7, RIS Form
+        self.proceedBtn7.clicked.connect(
+            lambda: self.pages.setCurrentIndex(7)
+        )
+        self.backBtn7.clicked.connect(
+            lambda: self.pages.setCurrentIndex(5)
+        )
+
+        #for page8, verified
+        self.containerBack2.mousePressEvent = lambda event: self.pages.setCurrentIndex(6)
+        self.containerDone2.mousePressEvent = lambda event: self.pages.setCurrentIndex(0)
+
+        #for page9, Office/School Supplies
+        self.proceedBtn_3.clicked.connect(
+            lambda: self.pages.setCurrentIndex(9)
+        )
+        self.backBtn9.clicked.connect(
+            lambda: self.pages.setCurrentIndex(1)
+        )
+
+        #for page10, RIS Form
+        self.proceedBtn10.clicked.connect(
+            lambda: self.pages.setCurrentIndex(10)
+        )
+        self.backBtn10.clicked.connect(
+            lambda: self.pages.setCurrentIndex(8)
+        )
+
+        #for page11, verified
+        self.containerBack3.mousePressEvent = lambda event: self.pages.setCurrentIndex(9)
+        self.containerDone3.mousePressEvent = lambda event: self.pages.setCurrentIndex(0)
+
+        #for page12, Mass Printing
+        self.proceedBtn_4.clicked.connect(
+            lambda: self.pages.setCurrentIndex(12)
+        )
+        self.backBtn12.clicked.connect(
+            lambda: self.pages.setCurrentIndex(1)
+        )
+
+        #for page13, RIS Form
+        self.proceedBtn13.clicked.connect(
+            lambda: self.pages.setCurrentIndex(13)
+        )
+        self.backBtn13.clicked.connect(
+            lambda: self.pages.setCurrentIndex(11)
+        )
+
+        #for page14, verified
+        self.containerBack4.mousePressEvent = lambda event: self.pages.setCurrentIndex(12)
+        self.containerDone4.mousePressEvent = lambda event: self.pages.setCurrentIndex(0)
+
+        
     # def create_top_bar(self, title_text, back_to_index): -- REMOVED  
 
     def handle_back_from_ris(self):
@@ -273,8 +365,9 @@ class StudentKiosk(QMainWindow, Ui_QMainWindow):
         self.update_cart_display()
         self.refresh_grid()
 
+        
 if __name__ == "__main__":
-    app = QApplication(sys.argv) 
-    k = StudentKiosk() 
+    app = QApplication(sys.argv)
+    k = StudentKiosk()
     k.show()
     sys.exit(app.exec())
