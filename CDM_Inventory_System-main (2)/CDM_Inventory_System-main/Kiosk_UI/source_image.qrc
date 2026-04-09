@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="images">
+    <file>icons/backButton.png</file>
     <file>icons/equalizer.jpg</file>
     <file>icons/Active PA Speaker.jpg</file>
     <file>icons/AudioProcessor.png</file>

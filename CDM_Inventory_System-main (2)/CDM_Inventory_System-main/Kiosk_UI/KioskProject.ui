@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>QMainWindow</class>
+ <widget class="QMainWindow" name="QMainWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -27,7 +27,7 @@
      <string notr="true">background-color: rgb(254, 255, 250);</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="page1">
      <widget class="QWidget" name="leftGreen" native="true">
@@ -58,9 +58,6 @@ image: url(:/images/icons/cdm_logo_transparent.png);</string>
        <property name="text">
         <string/>
        </property>
-       <property name="pixmap">
-        <pixmap>:/icons/cdm_logo_transparent.png</pixmap>
-       </property>
        <property name="scaledContents">
         <bool>true</bool>
        </property>
@@ -79,9 +76,6 @@ image: url(:/images/icons/cdm_logo_transparent.png);</string>
        </property>
        <property name="text">
         <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap>:/icons/rect-lightGreen.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -174,9 +168,6 @@ image: url(:/images/icons/arrow-arrow-removebg-preview.png);</string>
        </property>
        <property name="text">
         <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap>:/icons/arrow-arrow-removebg-preview.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -315,9 +306,6 @@ image: url(:/images/icons/arrow-arrow-removebg-preview.png);</string>
        <property name="text">
         <string/>
        </property>
-       <property name="pixmap">
-        <pixmap>:/icons/icon_5dots.png</pixmap>
-       </property>
        <property name="scaledContents">
         <bool>false</bool>
        </property>
@@ -382,9 +370,6 @@ image: url(:/images/icons/arrow-arrow-removebg-preview.png);</string>
        </property>
        <property name="text">
         <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap>:/icons/icon_5dots.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>false</bool>
@@ -451,9 +436,6 @@ image: url(:/images/icons/arrow-arrow-removebg-preview.png);</string>
        <property name="text">
         <string/>
        </property>
-       <property name="pixmap">
-        <pixmap>:/icons/icon_5dots.png</pixmap>
-       </property>
        <property name="scaledContents">
         <bool>false</bool>
        </property>
@@ -519,9 +501,6 @@ image: url(:/images/icons/arrow-arrow-removebg-preview.png);</string>
        <property name="text">
         <string/>
        </property>
-       <property name="pixmap">
-        <pixmap>:/icons/icon_5dots.png</pixmap>
-       </property>
        <property name="scaledContents">
         <bool>false</bool>
        </property>
@@ -546,9 +525,6 @@ image: url(:/images/icons/icon_cable.png);</string>
       <property name="text">
        <string/>
       </property>
-      <property name="pixmap">
-       <pixmap>:/icons/icon_cable.png</pixmap>
-      </property>
       <property name="scaledContents">
        <bool>true</bool>
       </property>
@@ -571,9 +547,6 @@ image: url(:/images/icons/icon_microphone.png)</string>
       </property>
       <property name="text">
        <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap>:/icons/icon_microphone.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -598,9 +571,6 @@ image: url(:/images/icons/icon_highlighter.png);</string>
       <property name="text">
        <string/>
       </property>
-      <property name="pixmap">
-       <pixmap>:/icons/icon_highlighter.png</pixmap>
-      </property>
       <property name="scaledContents">
        <bool>true</bool>
       </property>
@@ -624,14 +594,79 @@ image: url(:/images/icons/icon_printer.png);</string>
       <property name="text">
        <string/>
       </property>
-      <property name="pixmap">
-       <pixmap>:/icons/icon_printer.png</pixmap>
-      </property>
       <property name="scaledContents">
        <bool>true</bool>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="cableBtn">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>100</y>
+        <width>161</width>
+        <height>171</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 78px;
+background-color: transparent;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="microPhoneBtn">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>100</y>
+        <width>161</width>
+        <height>171</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 78px;
+background-color: transparent;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="highlighterBtn">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>100</y>
+        <width>161</width>
+        <height>171</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 78px;
+background-color: transparent;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="printerBtn">
+      <property name="geometry">
+       <rect>
+        <x>580</x>
+        <y>100</y>
+        <width>161</width>
+        <height>171</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 78px;
+background-color: transparent;</string>
+      </property>
+      <property name="text">
+       <string/>
       </property>
      </widget>
      <zorder>widget_4</zorder>
@@ -643,6 +678,10 @@ image: url(:/images/icons/icon_printer.png);</string>
      <zorder>iconMicrophone</zorder>
      <zorder>iconHighlighter</zorder>
      <zorder>iconPrinter</zorder>
+     <zorder>cableBtn</zorder>
+     <zorder>microPhoneBtn</zorder>
+     <zorder>highlighterBtn</zorder>
+     <zorder>printerBtn</zorder>
     </widget>
     <widget class="QWidget" name="page3">
      <widget class="QLabel" name="equipment">
@@ -830,9 +869,6 @@ image: url(:/images/icons/Projector-Vero HL6810ATV-03.png);</string>
               <property name="text">
                <string/>
               </property>
-              <property name="pixmap">
-               <pixmap>:/icons/cdm_logo_transparent.png</pixmap>
-              </property>
               <property name="scaledContents">
                <bool>false</bool>
               </property>
@@ -859,13 +895,6 @@ image: url(:/images/icons/Projector-Vero HL6810ATV-03.png);</string>
                   <width>50</width>
                   <height>50</height>
                  </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <pointsize>-1</pointsize>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
                 </property>
                 <property name="styleSheet">
                  <string notr="true">QPushButton[class=&quot;btnMinus&quot;] {
@@ -942,13 +971,6 @@ background-color: rgb(217, 223, 206);</string>
                   <height>50</height>
                  </size>
                 </property>
-                <property name="font">
-                 <font>
-                  <pointsize>-1</pointsize>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
-                </property>
                 <property name="styleSheet">
                  <string notr="true">QPushButton[class=&quot;btnPlus&quot;] {
     border-top-right-radius: 12px;
@@ -1007,9 +1029,6 @@ image: url(:/images/icons/adapter.jpg);</string>
               <property name="text">
                <string/>
               </property>
-              <property name="pixmap">
-               <pixmap>:/icons/arrow-arrow-removebg-preview.png</pixmap>
-              </property>
               <property name="scaledContents">
                <bool>false</bool>
               </property>
@@ -1036,13 +1055,6 @@ image: url(:/images/icons/adapter.jpg);</string>
                   <width>50</width>
                   <height>50</height>
                  </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <pointsize>-1</pointsize>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
                 </property>
                 <property name="styleSheet">
                  <string notr="true">QPushButton[class=&quot;btnMinus&quot;] {
@@ -1119,13 +1131,6 @@ background-color: rgb(217, 223, 206);</string>
                   <height>50</height>
                  </size>
                 </property>
-                <property name="font">
-                 <font>
-                  <pointsize>-1</pointsize>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
-                </property>
                 <property name="styleSheet">
                  <string notr="true">QPushButton[class=&quot;btnPlus&quot;] {
     border-top-right-radius: 12px;
@@ -1184,9 +1189,6 @@ image: url(:/images/icons/extension cord.png);</string>
               <property name="text">
                <string/>
               </property>
-              <property name="pixmap">
-               <pixmap>:/icons/icon_highlighter.png</pixmap>
-              </property>
               <property name="scaledContents">
                <bool>false</bool>
               </property>
@@ -1213,13 +1215,6 @@ image: url(:/images/icons/extension cord.png);</string>
                   <width>50</width>
                   <height>50</height>
                  </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <pointsize>-1</pointsize>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
                 </property>
                 <property name="styleSheet">
                  <string notr="true">QPushButton[class=&quot;btnMinus&quot;] {
@@ -1296,13 +1291,6 @@ background-color: rgb(217, 223, 206);</string>
                   <height>50</height>
                  </size>
                 </property>
-                <property name="font">
-                 <font>
-                  <pointsize>-1</pointsize>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
-                </property>
                 <property name="styleSheet">
                  <string notr="true">QPushButton[class=&quot;btnPlus&quot;] {
     border-top-right-radius: 12px;
@@ -1350,7 +1338,7 @@ QPushButton[class=&quot;btnPlus&quot;]:hover {
        <property name="geometry">
         <rect>
          <x>50</x>
-         <y>330</y>
+         <y>320</y>
          <width>141</width>
          <height>41</height>
         </rect>
@@ -1362,6 +1350,23 @@ border: 1px solid #000000</string>
        </property>
        <property name="text">
         <string>PROCEED</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="backBtn3">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>370</y>
+         <width>141</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(245, 248, 238);
+border-radius: 16px;</string>
+       </property>
+       <property name="text">
+        <string>BACK</string>
        </property>
       </widget>
      </widget>
@@ -1425,9 +1430,6 @@ image: url(:/images/icons/alcohol.png);</string>
             </property>
             <property name="text">
              <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>:/icons/icon_cable.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -1500,9 +1502,6 @@ image: url(:/images/icons/Projector-Vero HL6810ATV-03.png);</string>
             <property name="text">
              <string/>
             </property>
-            <property name="pixmap">
-             <pixmap>:/icons/cdm_logo_transparent.png</pixmap>
-            </property>
             <property name="scaledContents">
              <bool>true</bool>
             </property>
@@ -1573,9 +1572,6 @@ image: url(:/images/icons/broom.png);</string>
             </property>
             <property name="text">
              <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>:/icons/icon_microphone.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -1648,9 +1644,6 @@ image: url(:/images/icons/adapter.jpg);</string>
             <property name="text">
              <string/>
             </property>
-            <property name="pixmap">
-             <pixmap>:/icons/arrow-arrow-removebg-preview.png</pixmap>
-            </property>
             <property name="scaledContents">
              <bool>true</bool>
             </property>
@@ -1721,9 +1714,6 @@ image: url(:/images/icons/rect-lightGreen.png);</string>
             </property>
             <property name="text">
              <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>:/icons/rect-lightGreen.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -1796,9 +1786,6 @@ image: url(:/images/icons/Logo-shadow.png);</string>
             <property name="text">
              <string/>
             </property>
-            <property name="pixmap">
-             <pixmap>:/icons/icon_5dots.png</pixmap>
-            </property>
             <property name="scaledContents">
              <bool>true</bool>
             </property>
@@ -1869,9 +1856,6 @@ image: url(:/images/icons/batteries.png);</string>
             </property>
             <property name="text">
              <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>:/icons/icon_printer.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -1944,9 +1928,6 @@ image: url(:/images/icons/extension cord.png);</string>
             <property name="text">
              <string/>
             </property>
-            <property name="pixmap">
-             <pixmap>:/icons/icon_highlighter.png</pixmap>
-            </property>
             <property name="scaledContents">
              <bool>true</bool>
             </property>
@@ -2017,9 +1998,6 @@ image: url(:/images/icons/usb.jpg);</string>
             </property>
             <property name="text">
              <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>:/icons/Logo-shadow.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -2416,6 +2394,38 @@ border-radius: 10px</string>
         <set>Qt::AlignCenter</set>
        </property>
       </widget>
+      <widget class="QPushButton" name="backBtn4">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>75</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(217, 223, 206);</string>
+       </property>
+       <property name="text">
+        <string>Back</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="proceedBtn4">
+       <property name="geometry">
+        <rect>
+         <x>690</x>
+         <y>10</y>
+         <width>75</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(217, 223, 206);</string>
+       </property>
+       <property name="text">
+        <string>Proceed</string>
+       </property>
+      </widget>
      </widget>
      <widget class="QFrame" name="containerBelowTop">
       <property name="geometry">
@@ -2740,9 +2750,6 @@ image: url(:/images/icons/ovalArrow.png);</string>
        <property name="text">
         <string/>
        </property>
-       <property name="pixmap">
-        <pixmap>:/icons/icons/ovalArrow.png</pixmap>
-       </property>
        <property name="scaledContents">
         <bool>true</bool>
        </property>
@@ -2890,9 +2897,6 @@ image: url(:/images/icons/wiredMicrophone.png);</string>
             <property name="text">
              <string/>
             </property>
-            <property name="pixmap">
-             <pixmap>:/icons/icons/icon_cable.png</pixmap>
-            </property>
             <property name="scaledContents">
              <bool>true</bool>
             </property>
@@ -2964,9 +2968,6 @@ image: url(:/images/icons/microphone.png);</string>
             <property name="text">
              <string/>
             </property>
-            <property name="pixmap">
-             <pixmap>:/icons/icons/cdm_logo_transparent.png</pixmap>
-            </property>
             <property name="scaledContents">
              <bool>true</bool>
             </property>
@@ -3037,9 +3038,6 @@ image: url(:/images/icons/trsCables.png);</string>
             </property>
             <property name="text">
              <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>:/icons/icons/icon_microphone.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -3115,9 +3113,6 @@ image: url(:/images/icons/Active PA Speaker.jpg);</string>
             <property name="text">
              <string/>
             </property>
-            <property name="pixmap">
-             <pixmap>:/icons/icons/arrow-arrow-removebg-preview.png</pixmap>
-            </property>
             <property name="scaledContents">
              <bool>true</bool>
             </property>
@@ -3188,9 +3183,6 @@ image: url(:/images/icons/avr.png);</string>
             </property>
             <property name="text">
              <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>:/icons/icons/rect-lightGreen.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -3263,9 +3255,6 @@ image: url(:/images/icons/equalizer.jpg);</string>
             <property name="text">
              <string/>
             </property>
-            <property name="pixmap">
-             <pixmap>:/icons/icons/icon_5dots.png</pixmap>
-            </property>
             <property name="scaledContents">
              <bool>true</bool>
             </property>
@@ -3336,9 +3325,6 @@ image: url(:/images/icons/xlrCables.jpg);</string>
             </property>
             <property name="text">
              <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>:/icons/icons/icon_printer.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -3411,9 +3397,6 @@ image: url(:/images/icons/SpeakerSubwoofer.png);</string>
             <property name="text">
              <string/>
             </property>
-            <property name="pixmap">
-             <pixmap>:/icons/icons/icon_highlighter.png</pixmap>
-            </property>
             <property name="scaledContents">
              <bool>true</bool>
             </property>
@@ -3484,9 +3467,6 @@ image: url(:/images/icons/AudioProcessor.png);</string>
             </property>
             <property name="text">
              <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>:/icons/icons/Logo-shadow.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -3568,9 +3548,9 @@ image: url(:/images/icons/AudioProcessor.png);</string>
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>130</y>
+        <y>100</y>
         <width>251</width>
-        <height>381</height>
+        <height>411</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -3708,9 +3688,6 @@ image: url(:/images/icons/microphone.png);</string>
               <property name="text">
                <string/>
               </property>
-              <property name="pixmap">
-               <pixmap>:/icons/icons/cdm_logo_transparent.png</pixmap>
-              </property>
               <property name="scaledContents">
                <bool>false</bool>
               </property>
@@ -3737,13 +3714,6 @@ image: url(:/images/icons/microphone.png);</string>
                   <width>50</width>
                   <height>50</height>
                  </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <pointsize>-1</pointsize>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
                 </property>
                 <property name="styleSheet">
                  <string notr="true">QPushButton[class=&quot;btnMinus&quot;] {
@@ -3820,13 +3790,6 @@ background-color: rgb(217, 223, 206);</string>
                   <height>50</height>
                  </size>
                 </property>
-                <property name="font">
-                 <font>
-                  <pointsize>-1</pointsize>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
-                </property>
                 <property name="styleSheet">
                  <string notr="true">QPushButton[class=&quot;btnPlus&quot;] {
     border-top-right-radius: 12px;
@@ -3885,9 +3848,6 @@ image: url(:/images/icons/avr.png);</string>
               <property name="text">
                <string/>
               </property>
-              <property name="pixmap">
-               <pixmap>:/icons/icons/arrow-arrow-removebg-preview.png</pixmap>
-              </property>
               <property name="scaledContents">
                <bool>false</bool>
               </property>
@@ -3914,13 +3874,6 @@ image: url(:/images/icons/avr.png);</string>
                   <width>50</width>
                   <height>50</height>
                  </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <pointsize>-1</pointsize>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
                 </property>
                 <property name="styleSheet">
                  <string notr="true">QPushButton[class=&quot;btnMinus&quot;] {
@@ -3997,13 +3950,6 @@ background-color: rgb(217, 223, 206);</string>
                   <height>50</height>
                  </size>
                 </property>
-                <property name="font">
-                 <font>
-                  <pointsize>-1</pointsize>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
-                </property>
                 <property name="styleSheet">
                  <string notr="true">QPushButton[class=&quot;btnPlus&quot;] {
     border-top-right-radius: 12px;
@@ -4062,9 +4008,6 @@ image: url(:/images/icons/wiredMicrophone.png);</string>
               <property name="text">
                <string/>
               </property>
-              <property name="pixmap">
-               <pixmap>:/icons/icons/icon_highlighter.png</pixmap>
-              </property>
               <property name="scaledContents">
                <bool>false</bool>
               </property>
@@ -4091,13 +4034,6 @@ image: url(:/images/icons/wiredMicrophone.png);</string>
                   <width>50</width>
                   <height>50</height>
                  </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <pointsize>-1</pointsize>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
                 </property>
                 <property name="styleSheet">
                  <string notr="true">QPushButton[class=&quot;btnMinus&quot;] {
@@ -4174,13 +4110,6 @@ background-color: rgb(217, 223, 206);</string>
                   <height>50</height>
                  </size>
                 </property>
-                <property name="font">
-                 <font>
-                  <pointsize>-1</pointsize>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
-                </property>
                 <property name="styleSheet">
                  <string notr="true">QPushButton[class=&quot;btnPlus&quot;] {
     border-top-right-radius: 12px;
@@ -4240,6 +4169,23 @@ border: 1px solid #000000</string>
        </property>
        <property name="text">
         <string>PROCEED</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="backBtn6">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>360</y>
+         <width>141</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(245, 248, 238);
+border-radius: 16px;</string>
+       </property>
+       <property name="text">
+        <string>BACK</string>
        </property>
       </widget>
      </widget>
@@ -4378,6 +4324,38 @@ border-radius: 10px</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="backBtn7">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>75</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(217, 223, 206);</string>
+       </property>
+       <property name="text">
+        <string>Back</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="proceedBtn7">
+       <property name="geometry">
+        <rect>
+         <x>690</x>
+         <y>10</y>
+         <width>75</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(217, 223, 206);</string>
+       </property>
+       <property name="text">
+        <string>Proceed</string>
        </property>
       </widget>
      </widget>
@@ -4850,13 +4828,11 @@ color: #fefffa;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: transparent;
-color: #fefffa;</string>
+color: #fefffa;
+image: url(:/images/icons/ovalArrow.png);</string>
        </property>
        <property name="text">
         <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap>:/icons/ovalArrow.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -5029,9 +5005,9 @@ border-radius: 15px;</string>
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>130</y>
+        <y>100</y>
         <width>251</width>
-        <height>381</height>
+        <height>411</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -5169,9 +5145,6 @@ image: url(:/images/icons/WhiteboardInk.jpg);</string>
               <property name="text">
                <string/>
               </property>
-              <property name="pixmap">
-               <pixmap>:/icons/icons/cdm_logo_transparent.png</pixmap>
-              </property>
               <property name="scaledContents">
                <bool>false</bool>
               </property>
@@ -5198,13 +5171,6 @@ image: url(:/images/icons/WhiteboardInk.jpg);</string>
                   <width>50</width>
                   <height>50</height>
                  </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <pointsize>-1</pointsize>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
                 </property>
                 <property name="styleSheet">
                  <string notr="true">QPushButton[class=&quot;btnMinus&quot;] {
@@ -5281,13 +5247,6 @@ background-color: rgb(217, 223, 206);</string>
                   <height>50</height>
                  </size>
                 </property>
-                <property name="font">
-                 <font>
-                  <pointsize>-1</pointsize>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
-                </property>
                 <property name="styleSheet">
                  <string notr="true">QPushButton[class=&quot;btnPlus&quot;] {
     border-top-right-radius: 12px;
@@ -5346,9 +5305,6 @@ image: url(:/images/icons/highlighterStabilo.png);</string>
               <property name="text">
                <string/>
               </property>
-              <property name="pixmap">
-               <pixmap>:/icons/icons/arrow-arrow-removebg-preview.png</pixmap>
-              </property>
               <property name="scaledContents">
                <bool>false</bool>
               </property>
@@ -5375,13 +5331,6 @@ image: url(:/images/icons/highlighterStabilo.png);</string>
                   <width>50</width>
                   <height>50</height>
                  </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <pointsize>-1</pointsize>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
                 </property>
                 <property name="styleSheet">
                  <string notr="true">QPushButton[class=&quot;btnMinus&quot;] {
@@ -5458,13 +5407,6 @@ background-color: rgb(217, 223, 206);</string>
                   <height>50</height>
                  </size>
                 </property>
-                <property name="font">
-                 <font>
-                  <pointsize>-1</pointsize>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
-                </property>
                 <property name="styleSheet">
                  <string notr="true">QPushButton[class=&quot;btnPlus&quot;] {
     border-top-right-radius: 12px;
@@ -5523,9 +5465,6 @@ image: url(:/images/icons/mechanicalPencils.jpg);</string>
               <property name="text">
                <string/>
               </property>
-              <property name="pixmap">
-               <pixmap>:/icons/icons/icon_highlighter.png</pixmap>
-              </property>
               <property name="scaledContents">
                <bool>false</bool>
               </property>
@@ -5552,13 +5491,6 @@ image: url(:/images/icons/mechanicalPencils.jpg);</string>
                   <width>50</width>
                   <height>50</height>
                  </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <pointsize>-1</pointsize>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
                 </property>
                 <property name="styleSheet">
                  <string notr="true">QPushButton[class=&quot;btnMinus&quot;] {
@@ -5635,13 +5567,6 @@ background-color: rgb(217, 223, 206);</string>
                   <height>50</height>
                  </size>
                 </property>
-                <property name="font">
-                 <font>
-                  <pointsize>-1</pointsize>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
-                </property>
                 <property name="styleSheet">
                  <string notr="true">QPushButton[class=&quot;btnPlus&quot;] {
     border-top-right-radius: 12px;
@@ -5701,6 +5626,23 @@ border: 1px solid #000000</string>
        </property>
        <property name="text">
         <string>PROCEED</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="backBtn9">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>360</y>
+         <width>141</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(245, 248, 238);
+border-radius: 16px;</string>
+       </property>
+       <property name="text">
+        <string>BACK</string>
        </property>
       </widget>
      </widget>
@@ -5778,9 +5720,6 @@ image: url(:/images/icons/paperClips.jpg);</string>
             <property name="text">
              <string/>
             </property>
-            <property name="pixmap">
-             <pixmap>:/icons/icons/icon_cable.png</pixmap>
-            </property>
             <property name="scaledContents">
              <bool>true</bool>
             </property>
@@ -5851,9 +5790,6 @@ image: url(:/images/icons/Artline500A-Whiteboard-Marker-_black_white_blue.jpg);<
             </property>
             <property name="text">
              <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>:/icons/icons/cdm_logo_transparent.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -5926,9 +5862,6 @@ image: url(:/images/icons/ballpens_panda.png);</string>
             <property name="text">
              <string/>
             </property>
-            <property name="pixmap">
-             <pixmap>:/icons/icons/icon_microphone.png</pixmap>
-            </property>
             <property name="scaledContents">
              <bool>true</bool>
             </property>
@@ -5999,9 +5932,6 @@ image: url(:/images/icons/PermanentMarkers.png);</string>
             </property>
             <property name="text">
              <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>:/icons/icons/arrow-arrow-removebg-preview.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -6074,9 +6004,6 @@ image: url(:/images/icons/mechanicalPencils.jpg);</string>
             <property name="text">
              <string/>
             </property>
-            <property name="pixmap">
-             <pixmap>:/icons/icons/rect-lightGreen.png</pixmap>
-            </property>
             <property name="scaledContents">
              <bool>true</bool>
             </property>
@@ -6147,9 +6074,6 @@ image: url(:/images/icons/stapler.png);</string>
             </property>
             <property name="text">
              <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>:/icons/icons/icon_5dots.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -6222,9 +6146,6 @@ image: url(:/images/icons/highlighterStabilo.png);</string>
             <property name="text">
              <string/>
             </property>
-            <property name="pixmap">
-             <pixmap>:/icons/icons/icon_printer.png</pixmap>
-            </property>
             <property name="scaledContents">
              <bool>true</bool>
             </property>
@@ -6296,9 +6217,6 @@ image: url(:/images/icons/WhiteboardInk.jpg);</string>
             <property name="text">
              <string/>
             </property>
-            <property name="pixmap">
-             <pixmap>:/icons/icons/icon_highlighter.png</pixmap>
-            </property>
             <property name="scaledContents">
              <bool>true</bool>
             </property>
@@ -6369,9 +6287,6 @@ image: url(:/images/icons/pencils.jpg);</string>
             </property>
             <property name="text">
              <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap>:/icons/icons/Logo-shadow.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -6571,6 +6486,38 @@ border-radius: 10px</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="backBtn10">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>75</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(217, 223, 206);</string>
+       </property>
+       <property name="text">
+        <string>Back</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="proceedBtn10">
+       <property name="geometry">
+        <rect>
+         <x>690</x>
+         <y>10</y>
+         <width>75</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(217, 223, 206);</string>
+       </property>
+       <property name="text">
+        <string>Proceed</string>
        </property>
       </widget>
      </widget>
@@ -7043,13 +6990,11 @@ color: #fefffa;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: transparent;
-color: #fefffa;</string>
+color: #fefffa;
+image: url(:/images/icons/ovalArrow.png);</string>
        </property>
        <property name="text">
         <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap>:/icons/ovalArrow.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -7470,9 +7415,9 @@ background-color: transparent;</string>
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>110</y>
+        <y>100</y>
         <width>271</width>
-        <height>401</height>
+        <height>411</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -7799,6 +7744,23 @@ border-radius: 12px;</string>
         </layout>
        </widget>
       </widget>
+      <widget class="QPushButton" name="backBtn12">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>360</y>
+         <width>141</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(245, 248, 238);
+border-radius: 16px;</string>
+       </property>
+       <property name="text">
+        <string>BACK</string>
+       </property>
+      </widget>
      </widget>
     </widget>
     <widget class="QWidget" name="page13">
@@ -7904,6 +7866,38 @@ border-radius: 10px</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="backBtn13">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>75</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(217, 223, 206);</string>
+       </property>
+       <property name="text">
+        <string>Back</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="proceedBtn13">
+       <property name="geometry">
+        <rect>
+         <x>690</x>
+         <y>10</y>
+         <width>75</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(217, 223, 206);</string>
+       </property>
+       <property name="text">
+        <string>Proceed</string>
        </property>
       </widget>
      </widget>
@@ -8376,13 +8370,11 @@ color: #fefffa;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: transparent;
-color: #fefffa;</string>
+color: #fefffa;
+image: url(:/images/icons/ovalArrow.png);</string>
        </property>
        <property name="text">
         <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap>:/icons/ovalArrow.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
